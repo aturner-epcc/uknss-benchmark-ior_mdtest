@@ -29,7 +29,7 @@ executable at 'src/mdtest'.
 III. Run Rules
 --------------------------------------------------------------------------------
 The intent of these benchmarks is to measure the performance of I/O operations
-on both the platform storage system and the QoS storage system under these loads:
+on both the platform and QoS storage system under these loads:
 
 1. fully sequential, large-transaction reads and writes
 2. fully random, small-transaction reads and writes

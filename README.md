@@ -4,6 +4,15 @@ This repository contains the IOR and mdtest parallel I/O benchmarks.  The
 [official IOR/mdtest documention][] can be found in the `doc/` subdirectory or
 on Read the Docs.
 
+For specific N10 information read:
+
+README.ior.N10
+README.mdtest.N10
+
+and examine the contents of
+
+inputs.N10
+
 ## Building
 
 1. If `configure` is missing from the top level directory, you probably

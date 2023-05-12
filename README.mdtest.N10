@@ -19,8 +19,8 @@ III. Run Rules
 The intent of this benchmark is to measure the performance of file metadata
 operations on the platform and QoS storage systems.  
 
-Observed benchmark performance shall be obtained from storage systems
-configured as closely as possible to the proposed storage. If a
+Observed benchmark performance shall be obtained from a storage system
+configured as closely as possible to the proposed platform storage. If the
 proposed solution includes multiple file access protocols (e.g., pNFS and NFS)
 or multiple tiers accessible by applications, benchmark results for mdtest
 shall be provided for each protocol and/or tier.
@@ -36,7 +36,7 @@ caching/buffering effects.  As such, the Offerer should not utilize
 optimizations that cache/buffer file metadata or metadata operations in compute
 node memory.
 
-The Offeror shall run the following tests on platform and QoS storage:
+The Offeror shall run the following tests:
 
 * creating, statting, and removing at least 1,048,576 files in a single
   directory

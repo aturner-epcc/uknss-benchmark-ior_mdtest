@@ -5,7 +5,7 @@
 ################################################################################
 IOR START
 
-### You MUST change the following parameters (see README.APEX)
+### You MUST change the following parameters (see README.ior.N10)
     numTasks=240            # number of MPI processes to use.  You may choose to use one or more MPI processes per node.
     segmentCount=1048576    # must be > fileSize / ( blockSize * numTasks ) where fileSize must be greater than 1.5 times the aggregate DRAM available for use by the page cache
     memoryPerNode=80%       # must be > 80% of the node's DRAM available for use by the page cache

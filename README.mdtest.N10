@@ -36,14 +36,17 @@ caching/buffering effects.  As such, the Offerer should not utilize
 optimizations that cache/buffer file metadata or metadata operations in compute
 node memory.
 
-The Offeror shall run the following tests:
+The Offeror shall run both of the following tests for each of the listed
+levels of concurrency, except the single process test which shall be a
+single directory test.
 
 * creating, statting, and removing at least 1,048,576 files in a single
   directory
+
 * creating, statting, and removing at least 1,048,576 files in separate
   directories (one directory per MPI process)
 
-Each of these tests must be run at the following levels of concurrency:
+Tests must be run at the following levels of concurrency:
 
 1. a single MPI process
 2. the optimal number of MPI processes on a single compute node
@@ -92,8 +95,8 @@ The following command-line flags MUST NOT be changed or omitted:
 * `-T` - perform file stat test
 * `-r` - perform file remove test
 
-**To have each MPI process write files into a unique directory,** add the `-u`
-option:
+**To run mdtest where each MPI process acts on its own directory,
+an appropriate `mdtest` command-line invocation will add the `-u` option:
 
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16 -u
 

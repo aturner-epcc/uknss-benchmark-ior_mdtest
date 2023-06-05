@@ -28,30 +28,16 @@ in order to make saturation requirements easier to achieve.
 
 ### Required Runs
 
-TO FIGURE OUT: what defines a busy system, how to define a saturated system
-in both cases want to ensure that the network is not the bottleneck.
-For reporting results, need to have a clear picture of what the vendor did
-in each of these instances.
-
 Using the operating instructions layed out in README.ior.N10 and
 README.mdtest.N10:
 
-1) show that single client ior job on an empty system, when run on a 
-busy system and granted a QoS that matches its requirments will perform
-the same within X% margin of error.
+1) show that N multi-client ior jobs, run on an otherwise empty system,
+each granted the same QoS, will achieve the same result. Begin with N=1
+and increase up to, and beyond the point the storage system is saturated. 
 
-2) show that single client mdtest job on an empty system, when run on a
-busy system and granted a QoS that matches its requirments will perform
-the same within X% margin of error.
-
-3) show that N multi-client ior jobs, run on an otherwise empty system,
-each granted the same QoS, will achieve the same result as N increases
-up to and beyond the point the storage system is saturated. 
-
-4) show that N multi-client mdtest jobs, run on an otherwise empty system,
-each granted the same QoS, will achieve the same result as N increases 
-up to and beyond the point the storage system is saturated.
-
+2) show that N multi-client ior jobs, run on an otherwise empty system,
+each granted the same QoS, will achieve the same result. Begin with N=1
+and increase up to, and beyond the point the storage system is saturated.
 
 IV. Permitted Modifications
 --------------------------------------------------------------------------------

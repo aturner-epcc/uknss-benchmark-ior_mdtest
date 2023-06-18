@@ -120,7 +120,6 @@ transferred data in system memory.
 The Offeror shall run the following tests for platform and QoS storage:
 
 * POSIX I/O file per process 
-* POSIX I/O shared file 
 
 Both of these tests must be run at the following levels of concurrency:
 

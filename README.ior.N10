@@ -60,11 +60,10 @@ Each of these tests must be run at the following levels of concurrency:
 1. a single compute node
 2. 15% of the proposed system's compute nodes
 3. sufficient compute nodes to achieve the maximum bandwidth results
-4. 90% of the proposed system's compute nodes
 
 These tests must be configured via a combination of input configuration files
 and command line options.  Annotated input configuration files are provided in
-the `inputs.apex/` subdirectory and demonstrate how these tests can be defined
+the `inputs.N10/` subdirectory and demonstrate how these tests can be defined
 for the purposes of these benchmarks.
 
 The Offeror MUST modify the following parameters for each benchmark test:
@@ -130,7 +129,7 @@ Both of these tests must be run at the following levels of concurrency:
 
 These tests must be configured via a combination of input configuration files
 and command line options.  Annotated input configuration files are provided in
-the `inputs.apex/` subdirectory and demonstrate how these tests can be defined
+the `inputs.N10/` subdirectory and demonstrate how these tests can be defined
 for the purposes of these benchmarks.
 
 The Offeror MUST modify the following parameters for each benchmark test:
@@ -178,7 +177,7 @@ will execute IOR with 64 processes and use the input configuration file called
 `load1-posix-filepertask.ior`.
 
 Example input configuration files for all required tests are supplied in the
-`inputs.apex/` directory with additional annotations and details where
+`inputs.N10/` directory with additional annotations and details where
 appropriate.
 
 

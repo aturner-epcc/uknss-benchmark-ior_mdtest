@@ -57,7 +57,7 @@ The Offeror shall run the following tests for platform and QoS storage:
 
 Each of these tests must be run at the following levels of concurrency:
 
-1. a single compute node
+1. a single compute node (perform a separate test for CPU and for GPU)
 2. 15% of the proposed system's compute nodes
 3. sufficient compute nodes to achieve the maximum bandwidth results
 
@@ -124,7 +124,7 @@ The Offeror shall run the following tests for platform and QoS storage:
 
 Both of these tests must be run at the following levels of concurrency:
 
-1. a single compute node
+1. a single compute node (perform a separate test for CPU and for GPU)
 2. 15% of the proposed system's compute nodes
 
 These tests must be configured via a combination of input configuration files

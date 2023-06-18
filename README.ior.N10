@@ -117,11 +117,11 @@ storage subsystem and contains features that minimize caching/buffering effects.
 As such, the Offerer should not utilize optimizations that cache or buffer the
 transferred data in system memory.
 
-The Offeror shall run the following tests for platform and QoS storage:
+The Offeror shall run the following test for platform and QoS storage:
 
 * POSIX I/O file per process 
 
-Both of these tests must be run at the following levels of concurrency:
+This test must be run at the following levels of concurrency:
 
 1. a single compute node (perform a separate test for CPU and for GPU)
 2. 15% of the proposed system's compute nodes

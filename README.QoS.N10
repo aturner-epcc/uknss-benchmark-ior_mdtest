@@ -1,0 +1,74 @@
+﻿NERSC-10 QSS Only Benchmarks
+================================================================================
+
+I. Benchmark Description
+--------------------------------------------------------------------------------
+These benchmarks are designed to demonstrate and measure the performance of 
+the quality of service capability of the QoS Storage System.  Both ior and 
+mdtest will be employed to demonstrate QoS. All of the general run rules 
+for N10 benchmarking apply.
+
+
+II. Build Instructions
+--------------------------------------------------------------------------------
+
+ior and mdtest are included with ior-3.3.0 and will be used for these tests.
+The compile is detailed in README.ior.N10
+
+III. Run Rules
+--------------------------------------------------------------------------------
+The intent of this benchmark is to demonstrate and measure the performance 
+of the quality of service capability of the platform and QoS storage systems.  
+
+Observed benchmark performance shall be obtained from a storage system
+configured as closely as possible to the proposed platform storage. 
+
+Use of a scalable unit or subset of the proposed scalable units is allowed
+in order to make saturation requirements easier to achieve.
+
+### Required Runs
+
+Using the operating instructions layed out in README.ior.N10 and
+README.mdtest.N10:
+
+1) show that N multi-client ior jobs, run on an otherwise empty system,
+each granted the same QoS, will achieve the same result. Begin with N=1
+and increase up to, and beyond the point the storage system is saturated. 
+
+2) show that N multi-client ior jobs, run on an otherwise empty system,
+each granted the same QoS, will achieve the same result. Begin with N=1
+and increase up to, and beyond the point the storage system is saturated.
+
+IV. Permitted Modifications
+--------------------------------------------------------------------------------
+
+Modifications to the benchmark application code are only permissible to enable
+correct compilation and execution on the target platform.  Any modifications
+must be fully documented (e.g., as a diff or patch file) and reported with the
+benchmark results.
+
+
+V. Reporting Results
+--------------------------------------------------------------------------------
+
+Offeror will articulate results for ior and mdtest for each client
+
+### Benchmark Platform Description
+
+The Offeror must provide a comprehensive description of the environment in which
+each benchmark was run.  This must include:
+
+* Client and server system configurations, including node and processor counts,
+  processor models, memory size and speed, and OS (names and versions)
+* Storage media and their configurations used for each tier of the storage
+  subsystem
+* Network fabric used to connect servers, clients, and storage, including
+  network configuration settings and topology
+* Client and server configuration settings including
+    * Client and server sysctl settings
+    * Driver options
+    * Network interface options
+    * File system configuration and mount options
+* Compiler name and version, compiler options, and libraries used to build
+  benchmarks
+

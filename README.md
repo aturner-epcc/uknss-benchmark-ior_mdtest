@@ -10,21 +10,21 @@ The storage microbenchmarks are intended to measure the performance of the propo
 
 IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO apis.  The specifics of the IOR tests to be performed are in the file called:
 
-README.ior.N10
+`README.ior.N10`
 
 with helper scripts in the file called:
 
-inputs.N10
+`inputs.N10`
 
 mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results.  The specifics of the mdtest tests to be run are in the file called:
 
-README.mdtest.N10
+`README.mdtest.N10`
 
 Both IOR and mdtest will be employed to measure the performance of 
 the quality of service capability of the QoS Storage System.  Both ior and 
 mdtest will be employed to demonstrate QoS.  The specifics of the QoS tests are in the file called:
 
-README.QoS.N10
+`README.QoS.N10`
 
 # 1. Permitted Modifications
 

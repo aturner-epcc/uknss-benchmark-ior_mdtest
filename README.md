@@ -44,13 +44,13 @@ https://github.com/hpc/ior.
 After extracting the tar file, ensure that the MPI compiler wrappers (e.g.,
 `mpicc`) are in `$PATH` and then
 
-    `cd ior-3.3.0-N10`
-    `./configure`
-    `make`
+    cd ior-3.3.0-N10
+    ./configure
+    make
 
 This will build both IOR with the POSIX and MPI-IO interfaces and create the
 IOR executable at `src/ior`.  It will also build mdtest and place the
-executable at 'src/mdtest'.
+executable at `src/mdtest`.
 
 
 # 4. Reporting Results

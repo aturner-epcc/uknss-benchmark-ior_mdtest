@@ -17,7 +17,7 @@ https://github.com/hpc/ior.
 After extracting the tar file, ensure that the MPI compiler wrappers (e.g.,
 `mpicc`) are in `$PATH` and then
 
-    cd ior-3.3.0-N10
+    cd ior-3.3.0
     ./configure
     make
 

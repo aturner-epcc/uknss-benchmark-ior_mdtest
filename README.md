@@ -53,7 +53,7 @@ IOR executable at `src/ior`.  It will also build mdtest and place the
 executable at `src/mdtest`.
 
 
-# 4. Reporting Results
+# 3. Reporting Results
 
 
 ### Benchmark Platform Description

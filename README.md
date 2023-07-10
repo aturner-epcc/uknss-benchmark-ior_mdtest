@@ -53,10 +53,7 @@ IOR executable at `src/ior`.  It will also build mdtest and place the
 executable at `src/mdtest`.
 
 
-# 3. Reporting Results
-
-
-### Benchmark Platform Description
+# 3. Benchmark Platform Description
 
 The Offeror must provide a comprehensive description of the environment in which
 each benchmark was run.  This must include:

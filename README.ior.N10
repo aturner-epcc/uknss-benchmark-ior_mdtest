@@ -1,35 +1,10 @@
 NERSC-10 IOR Benchmark 
 ================================================================================
 
-I. Benchmark Description
---------------------------------------------------------------------------------
-IOR is designed to measure parallel I/O performance at both the POSIX and MPI-IO
-level.  All of the general run rules for N-10 benchmarking apply.
-
-
-II. Build Instructions
---------------------------------------------------------------------------------
-MPI and MPI-IO are required to build and run the code. The
-source code used for this benchmark is derived from IOR 3.3.0 and it is
-included here.  More information about IOR is available on 
-https://github.com/hpc/ior.
-
-After extracting the tar file, ensure that the MPI compiler wrappers (e.g.,
-`mpicc`) are in `$PATH` and then
-
-    cd ior-3.3.0
-    ./configure
-    make
-
-This will build both IOR with the POSIX and MPI-IO interfaces and create the
-IOR executable at `src/ior`.  It will also build mdtest and place the
-executable at 'src/mdtest'.
-
-
-III. Run Rules
+I. Run Rules
 --------------------------------------------------------------------------------
 The intent of these benchmarks is to measure the performance of I/O operations
-on both the platform and QoS storage systems under these loads:
+on both the Platform and QoS storage systems under these loads:
 
 1. fully sequential, large-transaction reads and writes
 2. fully random, small-transaction reads and writes
@@ -161,8 +136,9 @@ appropriate `segmentCount` would be
 
     segmentCount = fileSize / ( 4K * numTasks ) = 1048576
 
-### Running IOR
 
+II. Running IOR
+--------------------------------------------------------------------------------
 IOR is executed as any other standard MPI application would be on the proposed
 system.  For example,
 
@@ -180,16 +156,7 @@ Example input configuration files for all required tests are supplied in the
 appropriate.
 
 
-IV. Permitted Modifications
---------------------------------------------------------------------------------
-
-Modifications to the benchmark application code are only permissible to enable
-correct compilation and execution on the target platform.  Any modifications
-must be fully documented (e.g., as a diff or patch file) and reported with the
-benchmark results.
-
-
-V. Reporting Results
+III. Reporting Results
 --------------------------------------------------------------------------------
 
 ### Load 1: Sequential Loads
@@ -216,24 +183,4 @@ As with Load 1, the maximum write and read bandwidths for a single
 read-and-write test must be reported for Load 2.  Read bandwidth has slightly
 higher importance for this test, so report results from the run with the highest
 read rate.
-
-### Benchmark Platform Description
-
-In addition to maximum bandwidths, the Offeror must also provide a comprehensive
-description of the environment in which each benchmark was run.  This must
-include:
-
-* Client and server system configurations, including node and processor counts,
-  processor models, memory size and speed, and OS (names and versions)
-* Storage media and their configurations used for each tier of the storage
-  subsystem
-* Network fabric used to connect servers, clients, and storage, including
-  network configuration settings and topology
-* Client and server configuration settings including
-    * Client and server sysctl settings
-    * Driver options
-    * Network interface options
-    * File system configuration and mount options
-* Compiler name and version, compiler options, and libraries used to build
-  benchmarks
 

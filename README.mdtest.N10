@@ -87,7 +87,7 @@ an appropriate `mdtest` command-line invocation will add the `-u` option:
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16 -u
 
 
-V. Reporting Results
+III. Reporting Results
 --------------------------------------------------------------------------------
 
 mdtest will execute file creation, file statting, and file deletion tests for

@@ -15,7 +15,7 @@ IOR START
     blockSize=1M            # must be the same as transferSize
     testFile=datafile.dat   # will read/write files called ./datafile.dat.00000000 ./datafile.dat.00000001 etc
     collective=0            # for MPIIO api use collectives (e.g. MPI_File_read_all) instead of independent calls (e.g. MPI_File_read)
-    keepFile=0              # do not delete files used by the test at the end of each execution
+    keepFile=0              # do not keep files used by the test at the end of each execution
 
 ### You MUST NOT change the following parameters
     reorderTasksConstant=1  # each node n writes data; that data is then read by node n+1

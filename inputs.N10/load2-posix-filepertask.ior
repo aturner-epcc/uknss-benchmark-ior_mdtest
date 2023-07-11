@@ -12,7 +12,7 @@ IOR START
 
 ### You MAY change the following parameters
     testFile=datafile.dat   # will read/write files called ./datafile.dat.00000000 ./datafile.dat.00000001 etc
-    keepFile=0              # do not delete files used by the test at the end of each execution
+    keepFile=0              # do not keep files used by the test at the end of each execution
 
 ### You MUST NOT change the following parameters
     transferSize=4K         # size of a single data buffer to be transferred by a single I/O call

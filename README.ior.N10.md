@@ -8,17 +8,17 @@ operations on both the Platform and QoS storage systems.  We are
 interested in the performance of three workloads at multiple levels of
 concurrency:
 
-1. fully sequential, large-transaction reads and writes, N to N
+## 1. fully sequential, large-transaction reads and writes, N to N
 	a) single node CPU
 	b) single node GPU
 	c) 15% proposed number of compute nodes
 	d) sufficient compute nodes to achieve maximum result
 
-2. fully sequential, large-transaction reads and writes, N to 1
+## 2. fully sequential, large-transaction reads and writes, N to 1
 	a) 15% proposed number of compute nodes
 	b) sufficient compute nodes to achieve maximum result
 
-3. fully random, small-transaction reads and writes, N to N
+## 3. fully random, small-transaction reads and writes, N to N
         a) single node CPU
         b) single node GPU
         c) 15% proposed number of compute nodes

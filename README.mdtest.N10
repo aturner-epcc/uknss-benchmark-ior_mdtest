@@ -81,7 +81,7 @@ The following command-line flags MUST NOT be changed or omitted:
 * `-T` - perform file stat test
 * `-r` - perform file remove test
 
-**To run mdtest where each MPI process acts on its own directory,
+**To run mdtest where each MPI process acts on its own directoryi**,
 an appropriate `mdtest` command-line invocation will add the `-u` option:
 
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16 -u

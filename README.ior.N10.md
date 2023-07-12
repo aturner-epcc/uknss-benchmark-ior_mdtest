@@ -41,7 +41,7 @@ configured as they would be for the delivered NERSC-10 systems.
 For each of the above three loads, we have provided an annotated IOR
 script in the `inputs.N10` directory.
 
-In all three scripts, the offeror MUST modify the following parameters
+### In all three scripts, the offeror MUST modify the following parameters
 for each benchmark test:
 
 * `numTasks` - the number of MPI processes to use.  The Offeror may
@@ -59,7 +59,7 @@ for each benchmark test:
   the total RAM available on each compute node and is intended to
   represent the memory footprint of a real application.
 
-For the sequential loads (1 and 2), the Offeror MAY modify the
+### For the sequential loads (1 and 2), the Offeror MAY modify the
 following parameters for each test:
 
 * `transferSize` - the size (in bytes) of a single data buffer to be
@@ -81,7 +81,7 @@ User Guide (found in `doc/USER_GUIDE`).
 
 * `collective` - MPI-IO collective vs. independent operation mode
 
-For the random load (3) the blockSize is fixed at 4K, so the offeror
+### For the random load (3) the blockSize is fixed at 4K, so the offeror
 MAY modify only the following parameter for each test:
 
 * `testFile` - path to data files to be read or written for this benchmark

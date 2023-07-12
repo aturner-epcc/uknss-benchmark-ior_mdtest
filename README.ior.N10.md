@@ -81,7 +81,7 @@ User Guide (found in `doc/USER_GUIDE`).
 
 * `collective` - MPI-IO collective vs. independent operation mode
 
-### For the random load (3) the blockSize is fixed at 4K, so the offeror MAY modify only the following parameter for each test:
+### For the random load (3), the offeror MAY modify only the following parameter for each test:
 
 * `testFile` - path to data files to be read or written for this benchmark
 

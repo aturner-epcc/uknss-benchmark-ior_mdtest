@@ -1,7 +1,7 @@
 NERSC-10 IOR Benchmark 
 ================================================================================
 
-#I. Run Rules
+# I. Run Rules
 --------------------------------------------------------------------------------
 The intent of these benchmarks is to measure the performance of I/O
 operations on both the Platform and QoS storage systems.  We are
@@ -111,7 +111,7 @@ appropriate `segmentCount` would be
     segmentCount = fileSize / ( 4K * numTasks ) = 1048576
 
 
-#II. Running IOR
+# II. Running IOR
 --------------------------------------------------------------------------------
 IOR is executed as any other standard MPI application would be on the proposed
 system.  For example,
@@ -129,7 +129,7 @@ Annotated configuration files for required tests are supplied in the
 `inputs.N10/` directory.
 
 
-#III. Reporting Results
+# III. Reporting Results
 --------------------------------------------------------------------------------
 
 IOR will execute both read and write tests for each run.  The

@@ -1,20 +1,23 @@
 ﻿NERSC-10 mdtest Benchmark
 ================================================================================
 
-I. Run Rules
+# I. Run Rules
 --------------------------------------------------------------------------------
 
-This benchmark is intended to measure the capability of the storage subsystem
-to create and delete files, and it contains features that minimize
-caching/buffering effects.  As such, the Offerer should not utilize
-optimizations that cache/buffer file metadata or metadata operations in compute
-node memory.
+This benchmark is intended to measure the capability of the storage
+subsystem to create and delete files, and it contains features that
+minimize caching/buffering effects.  As such, the Offerer should not
+utilize optimizations that cache/buffer file metadata or metadata
+operations in compute node memory.
+
+
+
 
 Observed benchmark performance shall be obtained from a storage system
-configured as closely as possible to the proposed platform storage. If the
-proposed solution includes multiple file access protocols (e.g., pNFS and NFS)
-or multiple tiers accessible by applications, benchmark results for mdtest
-shall be provided for each protocol and/or tier.
+configured as closely as possible to the proposed platform storage. If
+the proposed solution includes multiple file access protocols (e.g.,
+pNFS and NFS) or multiple tiers accessible by applications, benchmark
+results for mdtest shall be provided for each protocol and/or tier.
 
 Performance projections are permissible if they are derived from a similar
 system that is considered an earlier generation of the proposed system.
@@ -44,12 +47,12 @@ Tests must be run at the following levels of concurrency:
    * using more than 1,048,576 files if the system is capable of launching
      more than 1,048,576 MPI processes
 
-These tests are configured via command-line arguments, and the following
-section provides guidance on passing the correct options to `mdtest` for each
-test.
+These tests are configured via command-line arguments, and the
+following section provides guidance on passing the correct options to
+`mdtest` for each test.
 
 
-II. Running mdtest
+# II. Running mdtest
 --------------------------------------------------------------------------------
 
 mdtest is executed as any other standard MPI application would be on the
@@ -87,7 +90,7 @@ an appropriate `mdtest` command-line invocation will add the `-u` option:
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16 -u
 
 
-III. Reporting Results
+# III. Reporting Results
 --------------------------------------------------------------------------------
 
 mdtest will execute file creation, file statting, and file deletion tests for

@@ -5,8 +5,8 @@ NERSC-10 IOR Benchmark
 --------------------------------------------------------------------------------
 The intent of these benchmarks is to measure the performance of I/O
 operations on both the Platform and QoS storage systems.  We are
-interested in the performance of three workloads at multiple levels of
-concurrency:
+interested in and expect the offeror to measure the performance of
+three workloads at multiple levels of concurrency:
 
 ## 1. fully sequential, large-transaction reads and writes, N to N
 	a) single node CPU
@@ -41,8 +41,8 @@ configured as they would be for the delivered NERSC-10 systems.
 For each of the above three loads, we have provided an annotated IOR
 script in the `inputs.N10` directory.
 
-### In all three scripts, the offeror MUST modify the following parameters
-for each benchmark test:
+### In all three scripts, the offeror MUST modify the following
+    parameters for each benchmark test:
 
 * `numTasks` - the number of MPI processes to use.  The Offeror may
   choose to run multiple MPI processes per compute node to achieve the
@@ -103,17 +103,17 @@ block size of 4K:
 
     fileSize = segmentCount * 4K * numTasks
 
-So for a 10-node test with an aggregate 640 GB of RAM, fileSize must be at
-least 960 GB.  Assuming `numTasks=240` (24 MPI processes per node), an
-appropriate `segmentCount` would be
+So for a 10-node test with an aggregate 640 GB of RAM, fileSize must
+be at least 960 GB.  Assuming `numTasks=240` (24 MPI processes per
+node), an appropriate `segmentCount` would be
 
     segmentCount = fileSize / ( 4K * numTasks ) = 1048576
 
 
 # II. Running IOR
 --------------------------------------------------------------------------------
-IOR is executed as any other standard MPI application would be on the proposed
-system.  For example,
+IOR is executed as any other standard MPI application would be on the
+proposed system.  For example,
 
     mpirun -np 64 ./ior -f ./load1-posix-filepertask.ior
 
@@ -121,8 +121,8 @@ or
 
     srun -n 64 ./ior -f ./load1-posix-filepertask.ior
 
-will execute IOR with 64 processes and use the input configuration file called
-`load1-posix-filepertask.ior`.
+will execute IOR with 64 processes and use the input configuration
+file called `load1-posix-filepertask.ior`.
 
 Annotated configuration files for required tests are supplied in the
 `inputs.N10/` directory.
@@ -135,13 +135,11 @@ IOR will execute both read and write tests for each run.  The
 bandwidth measurements to be reported are the `Max Write` and `Max
 Read` values (in units of `MB/s`) reported to stdout.  In addition,
 the concurrency (number of compute nodes and number of MPI processes
-used) for each run must be stated.
-
-The maximum write and read bandwidths for a single read-and-write test
-must be reported.  Reporting the maximum read bandwidth from one run
-and the maximum write bandwidth from a different run is NOT valid.
-Write bandwidth has slightly higher importance for this test, so if
-the highest observed read rate came from a different run than the
-highest observed write rate, report the results from the run with the
-highest write rate.
+used) for each run must be stated.  Results from a single
+read-and-write test must be reported.  Reporting the maximum read
+bandwidth from one run and the maximum write bandwidth from a
+different run is NOT valid.  Write bandwidth has slightly higher
+importance for this test, so if the highest observed read rate came
+from a different run than the highest observed write rate, report the
+results from the run with the highest write rate.
 

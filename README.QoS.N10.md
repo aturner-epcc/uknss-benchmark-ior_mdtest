@@ -64,10 +64,17 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 ## 2) Resource division test:
 
-Run an IOR job of arbitrary size
-take resulting IOPs
-divide by 5
-assign result to QoS for 5 separate simultaneous jobs
+    a) IOR sequential, N to N, reads and writes
+        *Run an IOR job of arbitrary size
+        *record resulting bandwidth
+        *divide by 5
+        *assign result to QoS for 5 separate simultaneous jobs
+
+    b) IOR random, small-transaction, N to N, reads and writes
+
+
+    c) mdtest
+
 
 1) show that N multi-client ior jobs, run on an otherwise empty system,
 each granted the same QoS, will achieve the same result. Begin with N=1

@@ -49,11 +49,17 @@ described in README.ior.N10.md and README.mdtest.N10.md.
         * Remove the QoS setting    
 <br>
 
-take IOPs from IOR or bandwidth - set QoS to half of that and re-run
+    c) limit mdtest create results
 
-    c) IOPs result from mdtest create
+        * Either from a fresh or completed run of mdtest 1a), single
+  MPI process on a CPU, record the file create operations per second.
 
-take IOPs from create - set Qos to half and re-run
+        * Using the provided QoS mechanism, set the write IOPs QoS to
+  half of the value recorded.
+
+        * Rerun the test with this QoS setting and record the results.
+
+        * Remove the QoS setting
 
 ## 2) Resource division test:
 

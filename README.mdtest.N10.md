@@ -71,7 +71,7 @@ appropriate `mdtest` command-line invocation may look like
 
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16
 
-The following command-line flags MUST be changed:
+### The following command-line flags MUST be changed:
 
 * `-n` - the number of files **each MPI process** should manipulate.  For a
   test run with 64 MPI processes, specifying `-n 16384` will produce the
@@ -84,14 +84,14 @@ The following command-line flags MUST be changed:
   for a test with 16 processes per node) to ensure that each test phase (read,
   stat, and delete) is performed on a different node.
 
-The following command-line flags MUST NOT be changed or omitted:
+### The following command-line flags MUST NOT be changed or omitted:
 
 * `-F` - only operate on files, not directories
 * `-C` - perform file creation test
 * `-T` - perform file stat test
 * `-r` - perform file remove test
 
-**To run mdtest where each MPI process acts on its own directoryi**,
+**To run mdtest where each MPI process acts on its own directory**,
 an appropriate `mdtest` command-line invocation will add the `-u` option:
 
     mpirun -np 64 ./mdtest -F -C -T -r -n 16384 -d /scratch -N 16 -u

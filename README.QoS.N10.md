@@ -43,7 +43,7 @@ each granted the same QoS, will achieve the same result. Begin with N=1
 and increase up to, and beyond the point the storage system is saturated.
 
 
-V. Reporting Results
+# III. Reporting Results
 --------------------------------------------------------------------------------
 
 Offeror will articulate results for ior and mdtest for each client

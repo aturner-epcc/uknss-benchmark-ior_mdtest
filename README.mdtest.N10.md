@@ -4,11 +4,12 @@
 # I. Run Rules
 --------------------------------------------------------------------------------
 
-This benchmark is intended to measure the capability of the storage
-subsystem to create and delete files, and it contains features that
-minimize caching/buffering effects.  As such, the Offerer should not
-utilize optimizations that cache/buffer file metadata or metadata
-operations in compute node memory.
+This benchmark is intended to measure the metadata capability of both
+the platform storage system and the QoS storage system.  It measures
+the rate at which a filesystem can create, state, and delete files,
+and contains features that minimize caching/buffering effects.  As
+such, the Offerer should not utilize optimizations that cache/buffer
+file metadata or metadata operations in compute node memory.
 
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed platform storage. If
@@ -23,14 +24,20 @@ The Offeror shall run both of the following tests for each of the listed
 levels of concurrency. 
 
 ## 1. create, stat, and remove at least 1,048,576 files in a single directory
-    a) a single MPI process (perform a separate test for CPU and for GPU)
-    b) the optimal number of MPI processes on a single compute node (perform a separate test for CPU and for GPU)
-    c) the minimal number of MPI processes on multiple compute nodes that achieves the peak results for the proposed system
-    d) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
-        * using one MPI process per CPU/GPU core across the entire system   
-        * using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
-        * create, stat, and remove at least 1,048,576 files in separate
-  directories (one directory per MPI process)
+   
+   a) a single MPI process (perform a separate test for CPU and for GPU)
+   b) the optimal number of MPI processes on a single CPU compute node
+   c) the optimal number of MPI processes on a single GPU compute node
+   d) the minimal number of MPI processes on multiple compute nodes that achieves the peak results for the proposed system
+   e) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
+   * using one MPI process per CPU core across the entire system
+   * using the maximum number of MPI processes possible if one MPI process per
+     core will not be possible on the proposed architecture
+   * using more than 1,048,576 files if the system is capable of launching
+     more than 1,048,576 MPI processes
+
+
+## 2. create, stat, and remove at least 1,048,576 files in separate directories, assigning one directory per MPI process.
 
 Tests must be run at the following levels of concurrency:
 

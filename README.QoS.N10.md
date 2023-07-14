@@ -21,7 +21,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 ## 1) Rate limit test:
 
-   a) limit bandwidth of sequential, N to N, reads and writes
+    a) limit bandwidth of sequential, N to N, reads and writes
 
     * Either from a fresh or completed run of IOR test 1a), single CPU
       sequential N-N, record the read and write bandwidth in the
@@ -34,7 +34,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
     * Remove the QoS setting
 
-   b) limit IOPs of random, small-transaction, N to N, reads and writes
+    b) limit IOPs of random, small-transaction, N to N, reads and writes
 
     * Either from a fresh or completed run of IOR test 3a), single CPU
       random N-N, record the read and write bandwidth in the

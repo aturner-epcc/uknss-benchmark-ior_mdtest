@@ -10,8 +10,8 @@ of the quality of service capability of the QoS storage systems.
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed platform storage. 
 
-Use of a scalable unit or subset of the proposed scalable units is allowed
-in order to make saturation requirements easier to achieve.
+For the purposes of this test, the use of a scalable unit or subset of
+the proposed scalable units is allowed.
 
 ### Required Runs
 
@@ -20,15 +20,24 @@ README.mdtest.N10:
 
 ## 1) Rate limit test:
 
-IOPs result from strided single client CPU
+    a) IOPs result from strided single client CPU
 
-IOPs result from random single client CPU
+take IOPs from IOR or bandwidth - set QoS to half of that and re-run
 
-IOPs result from mdtest create
+    b) IOPs result from random single client CPU
 
-Performance division test:
+take IOPs from IOR or bandwidth - set QoS to half of that and re-run
+
+    c) IOPs result from mdtest create
+
+take IOPs from create - set Qos to half and re-run
 
 ## 2) Resource division test:
+
+Run an IOR job of arbitrary size
+take resulting IOPs
+divide by 5
+assign result to QoS for 5 separate simultaneous jobs
 
 1) show that N multi-client ior jobs, run on an otherwise empty system,
 each granted the same QoS, will achieve the same result. Begin with N=1

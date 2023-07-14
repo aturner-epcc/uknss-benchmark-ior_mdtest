@@ -23,16 +23,16 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
     a) limit bandwidth of sequential, N to N, reads and writes
 
-    * Either from a fresh or completed run of IOR test 1a), single CPU
+        * Either from a fresh or completed run of IOR test 1a), single CPU
       sequential N-N, record the read and write bandwidth in the
       output.
 
-    * Using the provided QoS mechanism, set the read and write
+        * Using the provided QoS mechanism, set the read and write
       bandwidth QoS to half of the values recorded.
 
-    * Rerun the test with this QoS setting and record the results.
+        * Rerun the test with this QoS setting and record the results.
 
-    * Remove the QoS setting
+        * Remove the QoS setting
 
     b) limit IOPs of random, small-transaction, N to N, reads and writes
 

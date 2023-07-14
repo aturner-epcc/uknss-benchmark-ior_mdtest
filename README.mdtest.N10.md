@@ -10,9 +10,6 @@ minimize caching/buffering effects.  As such, the Offerer should not
 utilize optimizations that cache/buffer file metadata or metadata
 operations in compute node memory.
 
-
-
-
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed platform storage. If
 the proposed solution includes multiple file access protocols (e.g.,
@@ -23,13 +20,20 @@ Performance projections are permissible if they are derived from a similar
 system that is considered an earlier generation of the proposed system.
 
 The Offeror shall run both of the following tests for each of the listed
-levels of concurrency, except the single process test which shall be a
-single directory test.
+levels of concurrency. 
 
-* creating, statting, and removing at least 1,048,576 files in a single
-  directory
+## 1. create, stat, and remove at least 1,048,576 files in a single directory
+    a) a single MPI process (perform a separate test for CPU and for GPU)
+    b) the optimal number of MPI processes on a single compute node (perform a separate test for CPU and for GPU)
+    c) the minimal number of MPI processes on multiple compute nodes that achieves the peak results for the proposed system
+    d) the maximum possible MPI-level concurrency on the proposed system.  This
+   could mean
+   * using one MPI process per CPU/GPU core across the entire system
+   * using the maximum number of MPI processes possible if one MPI process per
+     core will not be possible on the proposed architecture
 
-* creating, statting, and removing at least 1,048,576 files in separate
+
+* create, stat, and remove at least 1,048,576 files in separate
   directories (one directory per MPI process)
 
 Tests must be run at the following levels of concurrency:

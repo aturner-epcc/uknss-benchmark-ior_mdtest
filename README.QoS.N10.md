@@ -37,17 +37,17 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
     b) limit IOPs of random, small-transaction, N to N, reads and writes
 
-    * Either from a fresh or completed run of IOR test 3a), single CPU
-      random N-N, record the read and write bandwidth in the
+       * Either from a fresh or completed run of IOR test 3a), single
+      CPU random N-N, record the read and write bandwidth in the
       output.
 
-    * Using the provided QoS mechanism, set the read and write
+       * Using the provided QoS mechanism, set the read and write
       IOPs QoS to half of the values recorded.
 
-    * Rerun the test with this QoS setting and record the results.
+       * Rerun the test with this QoS setting and record the results.
 
-    * Remove the QoS setting
-    
+       * Remove the QoS setting    
+<br>
 
 take IOPs from IOR or bandwidth - set QoS to half of that and re-run
 

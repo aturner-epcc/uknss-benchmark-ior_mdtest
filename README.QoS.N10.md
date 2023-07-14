@@ -4,27 +4,49 @@
 # I. Run Rules
 --------------------------------------------------------------------------------
 
-The intent of this benchmark is to demonstrate and measure the performance 
-of the quality of service capability of the QoS storage systems.  
+The intent of this benchmark is to demonstrate and measure the
+performance of the quality of service capability of the QoS storage
+systems.
 
 Observed benchmark performance shall be obtained from a storage system
-configured as closely as possible to the proposed platform storage. 
+configured as closely as possible to the proposed platform storage.
 
 For the purposes of this test, the use of a scalable unit or subset of
 the proposed scalable units is allowed.
 
-### Required Runs
+The building blocks for these tests are IOR and mdtest runs which are
+described in README.ior.N10.md and README.mdtest.N10.md.
 
-Using the operating instructions layed out in README.ior.N10 and
-README.mdtest.N10:
+### Required Runs
 
 ## 1) Rate limit test:
 
-    a) IOPs result from strided single client CPU
+   a) limit bandwidth of sequential, N to N, reads and writes
 
-take IOPs from IOR or bandwidth - set QoS to half of that and re-run
+    * Either from a fresh or completed run of IOR test 1a), single CPU
+      sequential N-N, record the read and write bandwidth in the
+      output.
 
-    b) IOPs result from random single client CPU
+    * Using the provided QoS mechanism, set the read and write
+      bandwidth QoS to half of the values recorded.
+
+    * Rerun the test with this QoS setting and record the results.
+
+    * Remove the QoS setting
+
+   b) limit IOPs of random, small-transaction, N to N, reads and writes
+
+    * Either from a fresh or completed run of IOR test 3a), single CPU
+      random N-N, record the read and write bandwidth in the
+      output.
+
+    * Using the provided QoS mechanism, set the read and write
+      IOPs QoS to half of the values recorded.
+
+    * Rerun the test with this QoS setting and record the results.
+
+    * Remove the QoS setting
+    
 
 take IOPs from IOR or bandwidth - set QoS to half of that and re-run
 

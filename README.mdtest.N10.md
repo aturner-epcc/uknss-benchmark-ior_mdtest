@@ -25,11 +25,11 @@ levels of concurrency.
 
 ## 1. create, stat, and remove at least 1,048,576 files in a single directory
    
-   a) a single MPI process (perform a separate test for CPU and for GPU)
-   b) the optimal number of MPI processes on a single CPU compute node
-   c) the optimal number of MPI processes on a single GPU compute node
-   d) the minimal number of MPI processes on multiple compute nodes that achieves the peak results for the proposed system
-   e) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
+    a) a single MPI process (perform a separate test for CPU and for GPU)
+    b) the optimal number of MPI processes on a single CPU compute node
+    c) the optimal number of MPI processes on a single GPU compute node
+    d) the minimal number of MPI processes on multiple compute nodes that achieves the peak results for the proposed system
+    e) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
    * using one MPI process per CPU core across the entire system
    * using the maximum number of MPI processes possible if one MPI process per
      core will not be possible on the proposed architecture

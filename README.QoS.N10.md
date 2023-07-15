@@ -69,12 +69,13 @@ described in README.ior.N10.md and README.mdtest.N10.md.
         *record resulting bandwidth
         *divide by 5
         *assign result to QoS for 5 separate simultaneous jobs
+<br>
 
     b) IOR random, small-transaction, N to N, reads and writes
-
+<br>
 
     c) mdtest
-
+<br>
 
 1) show that N multi-client ior jobs, run on an otherwise empty system,
 each granted the same QoS, will achieve the same result. Begin with N=1

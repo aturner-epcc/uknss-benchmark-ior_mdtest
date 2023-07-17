@@ -28,7 +28,7 @@ levels of concurrency.
     a) a single MPI process on a CPU compute node
     b) the optimal number of MPI processes on a single CPU compute node
     c) a single MPI process on a GPU compute node
-    d) the optimal number of MPI processes on a single GPU compute node
+    d) the sufficient number of MPI processes on a single GPU compute node
     e) the minimal number of compute nodes that achieves the peak results for the proposed system
     f) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
         * using one MPI process per CPU core across the entire system
@@ -41,7 +41,7 @@ levels of concurrency.
     b) the optimal number of MPI processes on a single CPU compute node
     c) a single MPI process on a GPU compute node
     d) the optimal number of MPI processes on a single GPU compute node
-    e) the minimal number of nodes that achieves the peak results for the proposed system
+    e) the sufficient number of nodes that achieves the peak results for the proposed system
     f) the maximum possible MPI-level concurrency on the proposed system.  This could mean:
         * using one MPI process per CPU core across the entire system
         * using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture

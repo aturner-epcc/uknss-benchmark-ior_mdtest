@@ -63,21 +63,30 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 <br>
 
-    3)
+    3) mdtest single directory 
 
-        * Run mdtest 3e), sufficient MPI processes to achieve maximum
-      result on the filesystem or subset of the filesystem. Record the
-      create, stat, and remove operations per second in the output.
 
-        * Using the provided QoS mechanism, set the write IOPs QoS to
-          20% of the creates per second value recorded.
+        a. Run mdtest 3e), sufficient MPI processes to achieve maximum result 
+        on the filesystem or subset of the filesystem. Record the create, stat, 
+        and remove operations per second in the output.
 
-        * Rerun the test with this QoS setting and record the results.
+        b. Using the provided QoS mechanism, set the write IOPs QoS to 20% of 
+        the creates per second value recorded.
 
-        * Remove the QoS setting
+        c. Rerun the test with this QoS setting and record the results.
+
+        d.  For a job count of 2, 3, 4, and 5. Run independent jobs like 
+          3a, above, simulteneously where the read and write IOPs QoS 
+          for each job is set to the same 20% value used for 3c. Record 
+          read and write IOPs for each job.
+
+        e. Remove the QoS setting
 
 # III. Reporting Results
 --------------------------------------------------------------------------------
 
-Offeror will articulate results for ior and mdtest for each client
+Offeror will provide documentation and relevant details about how QoS was set 
+to achieve results.  Additional details about offeror's QoS mechanism(s) are 
+welcome.  Offeror must provide all results from ior and mdtest for each job run 
+for the above tests.
 

@@ -49,7 +49,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
         Record the read and write IOPs in the output.
 
         b.  Using the provided QoS mechanism, set the read and write 
-	IOPs QoS for the job to 20% of the values recorded.
+        IOPs QoS for the job to 20% of the values recorded.
 
         c. Rerun the test with this QoS setting and record the read and 
         write IOPs.

@@ -17,11 +17,11 @@ the proposed scalable units is allowed.
 The building blocks for these tests are IOR and mdtest runs which are
 described in README.ior.N10.md and README.mdtest.N10.md.
 
-### Required Runs
+## Required Runs
 
 ## QoS Resource Division Scaling Test:
 
-    1) IOR, sequential, N to N, reads and writes
+###    1) IOR, sequential, N to N, reads and writes
 
         a. Run the IOR test 1d), sufficient compute nodes to achieve maximum 
           result on the filesystem or subset of the filesystem. Record the read 
@@ -42,7 +42,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 <br>
 
-    2) IOR, random, small-transaction, N to N, reads and writes
+###    2) IOR, random, small-transaction, N to N, reads and writes
 
         a. Run the IOR test 3d), sufficient compute nodes to achieve 
         maximum result on the filesystem or subset of the filesystem. 
@@ -63,7 +63,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 <br>
 
-    3) mdtest single directory 
+###    3) mdtest single directory 
 
 
         a. Run mdtest 3e), sufficient MPI processes to achieve maximum result 

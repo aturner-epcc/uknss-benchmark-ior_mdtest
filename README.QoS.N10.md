@@ -23,19 +23,21 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
     1) IOR, sequential, N to N, reads and writes
 
-        * Run the IOR test 1d), sufficient compute nodes to achieve
-      maximum result on the filesystem or subset of the
-      filesystem. Record the read and write bandwidth in the output.
+        a Run the IOR test 1d), sufficient compute nodes to achieve
+          maximum result on the filesystem or subset of the
+          filesystem. Record the read and write bandwidth in the
+          output.
 
-        * Using the provided QoS mechanism, set the read and write
-      bandwidth QoS for the job to 20% of the values recorded.
+        b Using the provided QoS mechanism, set the read and write
+          bandwidth QoS for the job to 20% of the values recorded.
 
-        * Rerun the test with this QoS setting and record the read and
+        c Rerun the test with this QoS setting and record the read and
           write bandwidth in the output.
 
-	* 
+	d Run N independent jobs simulteneously where the read and
+          write QoS is 
 
-        * Remove the QoS setting
+        e Remove the QoS setting
 <br>
 
     2) IOR, random, small-transaction, N to N, reads and writes

@@ -30,7 +30,8 @@ described in README.ior.N10.md and README.mdtest.N10.md.
         * Using the provided QoS mechanism, set the read and write
       bandwidth QoS for the job to 20% of the values recorded.
 
-        * Rerun the test with this QoS setting and record the results.
+        * Rerun the test with this QoS setting and record the read and
+          write bandwidth in the output.
 
 	* 
 
@@ -46,7 +47,8 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 	* Using the provided QoS mechanism, set the read and write
       IOPs QoS for the job to 20% of the values recorded.
 
-	* Rerun the test with this QoS setting and record the results.
+	* Rerun the test with this QoS setting and record the read and
+          write IOPs.
 
 	*
 

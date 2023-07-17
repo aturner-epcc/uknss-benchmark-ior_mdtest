@@ -22,6 +22,7 @@ three workloads at multiple levels of concurrency:
         a) single node CPU
         b) single node GPU
         c) 15% proposed number of compute nodes
+	d) sufficient compute nodes to achieve maximum result
 
 Observed benchmark performance shall be obtained from storage systems
 configured as closely as possible to the proposed storage systems. If

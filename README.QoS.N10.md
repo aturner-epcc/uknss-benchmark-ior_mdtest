@@ -63,7 +63,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 <br>
 
-###    3) mdtest single directory 
+###    3) mdtest shared directory, creates 
 
 
         a. Run mdtest 3e), sufficient MPI processes to achieve maximum result 

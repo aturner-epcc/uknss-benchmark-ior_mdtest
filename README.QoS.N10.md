@@ -19,9 +19,9 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 ### Required Runs
 
-## 1) QoS Resource Division Scaling Test:
+## QoS Resource Division Scaling Test:
 
-    a) IOR, sequential, N to N, reads and writes
+    1) IOR, sequential, N to N, reads and writes
 
         * Run the IOR test 1d), sufficient compute nodes to achieve
       maximum result on the filesystem or subset of the
@@ -37,7 +37,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
         * Remove the QoS setting
 <br>
 
-    b) IOR, random, small-transaction, N to N, reads and writes
+    2) IOR, random, small-transaction, N to N, reads and writes
 
 	* Run the IOR test 3d), sufficient compute nodes to achieve
       maximum result on the filesystem or subset of the
@@ -53,7 +53,7 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 	* Remove the QoS setting
 <br>
 
-    c) limit mdtest create results
+    3) limit mdtest create results
 
         * Run mdtest 3e), sufficient MPI processes to achieve maximum
       result on the filesystem or subset of the filesystem. Record the

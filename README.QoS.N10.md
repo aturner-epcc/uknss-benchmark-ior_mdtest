@@ -1,4 +1,4 @@
-﻿NERSC-10 QSS Only Benchmarks
+﻿NERSC-10 QSS Only Benchmark
 ================================================================================
 
 # I. Run Rules
@@ -19,77 +19,55 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 
 ### Required Runs
 
-## 1) Rate limit test:
+## 1) QoS Resource Division Scaling Test:
 
-    a) limit bandwidth of sequential, N to N, reads and writes
+    a) IOR, sequential, N to N, reads and writes
 
-        * Either from a fresh or completed run of IOR test 1a), single
-      CPU sequential N-N, record the read and write bandwidth in the
-      output.
+        * Run the IOR test 1d), sufficient compute nodes to achieve
+      maximum result on the filesystem or subset of the
+      filesystem. Record the read and write bandwidth in the output.
 
         * Using the provided QoS mechanism, set the read and write
-      bandwidth QoS to half of the values recorded.
+      bandwidth QoS for the job to 20% of the values recorded.
 
         * Rerun the test with this QoS setting and record the results.
+
+	* 
 
         * Remove the QoS setting
 <br>
 
-    b) limit IOPs of random, small-transaction, N to N, reads and writes
+    b) IOR, random, small-transaction, N to N, reads and writes
 
-        * Either from a fresh or completed run of IOR test 3a), single
-      CPU random N-N, record the read and write bandwidth in the
-      output.
+	* Run the IOR test 3d), sufficient compute nodes to achieve
+      maximum result on the filesystem or subset of the
+      filesystem. Record the read and write IOPs in the output.
 
-        * Using the provided QoS mechanism, set the read and write
-      IOPs QoS to half of the values recorded.
+	* Using the provided QoS mechanism, set the read and write
+      IOPs QoS for the job to 20% of the values recorded.
 
-        * Rerun the test with this QoS setting and record the results.
+	* Rerun the test with this QoS setting and record the results.
 
-        * Remove the QoS setting    
+	*
+
+	* Remove the QoS setting
 <br>
 
     c) limit mdtest create results
 
-        * Either from a fresh or completed run of mdtest 1a), single
-          MPI process on a CPU, record the file create operations per
-          second.
+        * Run mdtest 3e), sufficient MPI processes to achieve maximum
+      result on the filesystem or subset of the filesystem. Record the
+      create, stat, and remove operations per second in the output.
 
         * Using the provided QoS mechanism, set the write IOPs QoS to
-          half of the value recorded.
+          20% of the creates per second value recorded.
 
         * Rerun the test with this QoS setting and record the results.
 
         * Remove the QoS setting
-
-## 2) Resource division test:
-
-    a) IOR sequential, N to N, reads and writes
-        *Run an IOR job of arbitrary size
-        *record resulting bandwidth
-        *divide by 5
-        *assign result to QoS for 5 separate simultaneous jobs
-<br>
-
-    b) IOR random, small-transaction, N to N, reads and writes
-<br>
-
-    c) mdtest
-<br>
-
-1) show that N multi-client ior jobs, run on an otherwise empty system,
-each granted the same QoS, will achieve the same result. Begin with N=1
-and increase up to, and beyond the point the storage system is saturated. 
-
-2) show that N multi-client ior jobs, run on an otherwise empty system,
-each granted the same QoS, will achieve the same result. Begin with N=1
-and increase up to, and beyond the point the storage system is saturated.
-
 
 # III. Reporting Results
 --------------------------------------------------------------------------------
 
 Offeror will articulate results for ior and mdtest for each client
-
-
 

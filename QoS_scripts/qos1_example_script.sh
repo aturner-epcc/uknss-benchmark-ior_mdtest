@@ -13,22 +13,22 @@
 #SBATCH --time=1:00:00
 #SBATCH --constraint=cpu
 
-# -N is the number of compute nodes per job -n is the number of MPI threads
-# and should correspond with the numTasks variable in the IOR script
-
 # PATH TO IOR - set the below variable to the IOR binary path
 
 IOR_PATH=/home/user/ior-3.3.0/src/ior
 
 # PATH TO IOR SCRIPT - set the below variable to the IOR script
 
-IOR_SCRIPT=/home/user/input.N10/load1-posix-NtoN.ior
+IOR_SCRIPT=/home/user/inputs.N10/load1-posix-NtoN.ior
 
 # WORK DIRECTORY - set to the base directory where the work for each job
 # will get done, where directory_1, directory_2, directory_3, directory_4
 # and directory_5 will reside
 
 WORK=/scratch/user/results
+
+# -N is the number of compute nodes per job -n is the number of MPI threads
+# and should correspond with the numTasks variable in the IOR script
 
 # TWO JOBS
 
@@ -40,7 +40,7 @@ echo "TWO JOBS"
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_2
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
@@ -52,11 +52,11 @@ echo "THREE JOBS"
 # and directory_3
 
 cd $WORK/directory_1
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_2
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_3
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
@@ -68,13 +68,13 @@ echo "FOUR JOBS"
 # directory_3, and directory_4
 
 cd $WORK/directory_1
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_2
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_3
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_4
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
@@ -86,14 +86,14 @@ echo "FIVE JOBS"
 # directory_3, directory_4, and directory_5
 
 cd $WORK/directory_1
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_2
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_3
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_4
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 cd $WORK/directory_5
-srun -N 5 -n 50 ior-3.3.0/src/ior -f input.N10/load1-posix-NtoN.ior &
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait

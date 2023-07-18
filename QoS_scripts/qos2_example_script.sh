@@ -18,24 +18,46 @@
 IOR_PATH=/home/user/ior-3.3.0/src/ior
 
 # PATH TO IOR SCRIPT - set the below variable to the IOR script
+# where you will need to set the correct variables
 
-IOR_SCRIPT=/home/user/inputs.N10/load1-posix-NtoN.ior
+IOR_SCRIPT=/home/user/inputs.N10/load3-posix-random-NtoN.ior
 
 # WORK DIRECTORY - set to the base directory where the work for each job
 # will get done, where directory_1, directory_2, directory_3, directory_4
-# and directory_5 will reside
+# and directory_5 will need to be created
 
 WORK=/scratch/user/results
 
-# -N is the number of compute nodes per job -n is the number of MPI threads
-# and should correspond with the numTasks variable in the IOR script
+# For srun, -N is the number of compute nodes per job -n is the number 
+# of MPI threads and should correspond with the numTasks variable in the 
+# IOR script
+
+# ONE JOB
+
+for i in no_QoS QoS
+do echo "ONE JOB" $i
+if [ "$i" == "QoS" ]; then 
+	#This is where you set Qos
+	echo "set read and write BW Qos here"
+fi
+
+cd $WORK/directory_1
+srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT
+
+if [ "$i" == "QoS" ]; then
+        #This is where you unset Qos
+        echo "unset read and write BW Qos here"
+fi
+done
 
 # TWO JOBS
 
-echo "TWO JOBS"
-
-# Here's where you would set the read and write QoS for directory_1
-# and directory_2
+for i in no_QoS QoS
+do echo "TWO JOBS" $i
+if [ "$i" == "QoS" ]; then
+        #This is where you set Qos
+        echo "set read and write BW Qos here"
+fi
 
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
@@ -44,10 +66,20 @@ srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
-echo "THREE JOBS"
+if [ "$i" == "QoS" ]; then
+        #This is where you unset Qos
+        echo "unset read and write BW Qos here"
+fi
+done
 
-# Here's where you would set the read and write Qos for directory_1, directory_2,
-# and directory_3
+# THREE JOBS
+
+for i in no_QoS QoS
+do echo "THREE JOB" $i
+if [ "$i" == "QoS" ]; then
+        #This is where you set Qos
+        echo "set read and write BW Qos here"
+fi
 
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
@@ -58,10 +90,20 @@ srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
-echo "FOUR JOBS"
+if [ "$i" == "QoS" ]; then
+        #This is where you unset Qos
+        echo "unset read and write BW Qos here"
+fi
+done
 
-# Here's where you would set the read and write Qos for directory_1, directory_2,
-# directory_3, and directory_4
+# FOUR JOBS
+
+for i in no_QoS QoS
+do echo "FOUR JOBS" $i
+if [ "$i" == "QoS" ]; then
+        #This is where you set Qos
+        echo "set read and write BW Qos here"
+fi
 
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
@@ -74,10 +116,20 @@ srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
 
-echo "FIVE JOBS"
+if [ "$i" == "QoS" ]; then
+        #This is where you unset Qos
+        echo "unset read and write BW Qos here"
+fi
+done
 
-# Here's where you would set the read and write Qos for directory_1, directory_2,
-# directory_3, directory_4, and directory_5
+#FIVE JOBS
+
+for i in no_QoS QoS
+do echo "FIVE JOBS" $i
+if [ "$i" == "QoS" ]; then
+        #This is where you set Qos
+        echo "set read and write BW Qos here"
+fi
 
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
@@ -91,3 +143,9 @@ cd $WORK/directory_5
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 
 wait
+
+if [ "$i" == "QoS" ]; then
+        #This is where you unset Qos
+        echo "unset read and write BW Qos here"
+fi
+done

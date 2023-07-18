@@ -32,13 +32,13 @@ WORK=/scratch/user/results
 # of MPI threads and should correspond with the numTasks variable in the 
 # IOR script
 
-# ONE JOB
+#ONE JOB
 
 for i in no_QoS QoS
 do echo "ONE JOB" $i
 if [ "$i" == "QoS" ]; then 
-	#This is where you set Qos
-	echo "set read and write BW Qos here"
+	#This is where you set 20% Qos
+	echo "set read and write IOPs Qos here"
 fi
 
 cd $WORK/directory_1
@@ -46,106 +46,21 @@ srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT
 
 if [ "$i" == "QoS" ]; then
         #This is where you unset Qos
-        echo "unset read and write BW Qos here"
+        echo "unset read and write IOPs Qos here"
 fi
 done
 
-# TWO JOBS
+# 2-5 JOBS QoS
+#
+# This is where you set read/write IOPs QoS for each job (directory)
 
-for i in no_QoS QoS
-do echo "TWO JOBS" $i
-if [ "$i" == "QoS" ]; then
-        #This is where you set Qos
-        echo "set read and write BW Qos here"
-fi
-
-cd $WORK/directory_1
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_2
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-
-wait
-
-if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
-fi
+for j in 2 3 4 5
+        do echo $j "JOBS QoS"
+		for ((i=1; i<=$j; i++))
+        do cd $WORK/directory_$i
+		srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
+	done
+	wait
 done
 
-# THREE JOBS
-
-for i in no_QoS QoS
-do echo "THREE JOB" $i
-if [ "$i" == "QoS" ]; then
-        #This is where you set Qos
-        echo "set read and write BW Qos here"
-fi
-
-cd $WORK/directory_1
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_2
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_3
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-
-wait
-
-if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
-fi
-done
-
-# FOUR JOBS
-
-for i in no_QoS QoS
-do echo "FOUR JOBS" $i
-if [ "$i" == "QoS" ]; then
-        #This is where you set Qos
-        echo "set read and write BW Qos here"
-fi
-
-cd $WORK/directory_1
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_2
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_3
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_4
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-
-wait
-
-if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
-fi
-done
-
-#FIVE JOBS
-
-for i in no_QoS QoS
-do echo "FIVE JOBS" $i
-if [ "$i" == "QoS" ]; then
-        #This is where you set Qos
-        echo "set read and write BW Qos here"
-fi
-
-cd $WORK/directory_1
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_2
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_3
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_4
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-cd $WORK/directory_5
-srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
-
-wait
-
-if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
-fi
-done
+#This is where you unset Qos

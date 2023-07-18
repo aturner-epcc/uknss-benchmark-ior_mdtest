@@ -50,6 +50,8 @@ if [ "$i" == "QoS" ]; then
 fi
 done
 
+# 2-5 JOBS QoS
+#
 # This is where you set read/write QoS for each job (directory)
 
 for j in 2 3 4 5

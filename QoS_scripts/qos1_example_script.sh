@@ -37,16 +37,16 @@ WORK=/scratch/user/results
 for i in no_QoS QoS
 do echo "ONE JOB" $i
 if [ "$i" == "QoS" ]; then 
-	#This is where you set 20% Qos
-	echo "set read and write BW Qos here"
+	#This is where you set 20% QoS
+	echo "set read and write BW QoS here"
 fi
 
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT
 
 if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
+        #This is where you unset QoS
+        echo "unset read and write BW QoS here"
 fi
 done
 
@@ -63,4 +63,4 @@ for j in 2 3 4 5
 	wait
 done
 
-#This is where you unset Qos
+#This is where you unset QoS

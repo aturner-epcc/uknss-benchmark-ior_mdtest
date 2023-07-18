@@ -32,15 +32,15 @@ WORK=/scratch/user/results
 for i in no_QoS QoS
 do echo "ONE JOB" $i
 if [ "$i" == "QoS" ]; then
-	#This is where you set Qos
-	echo "set read and write BW Qos here"
+	#This is where you set QoS
+	echo "set read and write BW QoS here"
 fi
 
 srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_1 -N 16  &
 
 if [ "$i" == "QoS" ]; then
-        #This is where you unset Qos
-        echo "unset read and write BW Qos here"
+        #This is where you unset QoS
+        echo "unset read and write BW QoS here"
 fi
 done
 
@@ -56,5 +56,5 @@ for j in 2 3 4 5
 		wait
 	done
 
-#This is where you unset Qos
+#This is where you unset QoS
 

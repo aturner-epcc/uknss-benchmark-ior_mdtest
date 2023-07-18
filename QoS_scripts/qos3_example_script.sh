@@ -36,7 +36,7 @@ if [ "$i" == "QoS" ]; then
 	echo "set write IOPs QoS here"
 fi
 
-srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_1 -N 16  &
+srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_1 -N 16
 
 if [ "$i" == "QoS" ]; then
         #This is where you unset QoS
@@ -51,7 +51,7 @@ done
 for j in 2 3 4 5
         do echo $j "JOBS QoS"
 		for ((i=1; i<=$j; i++))
-		do srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_$i -N 16
+		do srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_$i -N 16 &
 		done
 		wait
 	done

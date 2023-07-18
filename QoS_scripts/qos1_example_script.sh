@@ -55,8 +55,7 @@ done
 for j in 2 3 4 5
         do echo $j "JOBS QoS"
 		for ((i=1; i<=$j; i++))
-        do echo $i
-		cd $WORK/directory_$i
+        do cd $WORK/directory_$i
 		srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
 	done
 	wait

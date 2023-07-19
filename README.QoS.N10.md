@@ -1,11 +1,11 @@
-﻿NERSC-10 QSS Only Benchmark
+NERSC-10 QSS Only Benchmark
 ================================================================================
 
 # I. Run Rules
 --------------------------------------------------------------------------------
 
 The intent of this benchmark is to demonstrate and measure the
-performance of the quality of service capability of the QoS storage
+effectiveness of the quality of service feature of the QoS storage
 systems.
 
 Observed benchmark performance shall be obtained from a storage system

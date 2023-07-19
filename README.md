@@ -8,11 +8,10 @@ should be reviewed before running these benchmark.<br>
 
 The storage microbenchmarks are intended to measure the performance of the proposed platform storage system (PSS) and quality of service storage system (QSS).
 
-IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
-
-mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
-
-Both IOR and mdtest will be employed to measure the performance of  the quality of service capability of the QoS Storage System. The specifics of the QoS tests are in the file named [`README.QoS.N10.md`](README.QoS.N10.md).
+Three sets of measurments are required:
+* IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
+* mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
+* Both IOR and mdtest will be employed to measure the performance of  the quality of service capability of the QoS Storage System. The specifics of the QoS tests are in the file named [`README.QoS.N10.md`](README.QoS.N10.md).
 
 # 1. Permitted Modifications
 
@@ -61,10 +60,11 @@ each benchmark was run.  This must include:
   benchmarks
 
 
-# 5. Reporting
+# 4. Reporting
 
 Results should be reported in the
 [NERSC-10 Benchmark Results worksheet](https://gitlab.com/NERSC/N10-benchmarks/run-rules-and-ssi).
+
 The required measurements are described in the files
 [README.ior.N10.md](README.ior.N10.md),
 [README.mdtest.N10.md](README.mdtest.N10.md) and

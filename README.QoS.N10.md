@@ -23,24 +23,24 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 For each of the below tests, there is an annotated Slurm batch script in the
 [`QoS_Scripts`](Qos_Scripts) directory. 
 
-##    1. IOR, sequential, N to N, reads and writes
+1. IOR, sequential, N to N, reads and writes
 
-        a) Run the IOR test 1d), sufficient compute nodes to achieve maximum 
+- *a.* Run the IOR test 1d), sufficient compute nodes to achieve maximum 
           result on the filesystem or subset of the filesystem. Record the read 
           and write bandwidth in the output.
 
-        b) Using the provided QoS mechanism, set the read and write 
+- *b.* Using the provided QoS mechanism, set the read and write 
           bandwidth QoS for the job to 20% of the values recorded.
 
-        c) Rerun the test with this QoS setting and record the read and 
+- *c.* Rerun the test with this QoS setting and record the read and 
           write bandwidth in the output.
 
-        d) For job counts of 2, 3, 4, and 5. Run independent jobs like 1a, 
+- *d.* For job counts of 2, 3, 4, and 5. Run independent jobs like 1a, 
           above, simulteneously where the read and write bandwidth QoS for each 
           job is set to the same 20% value used for 1c. Record read and write 
           bandwidth for each job.
 
-        e) Remove the QoS setting
+- *e.* Remove the QoS setting
 
 <br>
 

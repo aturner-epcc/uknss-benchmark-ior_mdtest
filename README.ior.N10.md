@@ -40,7 +40,7 @@ proposed system.  For example,
 ```	 
 mpirun -np 64 ior -f load1-posix-filepertask.ior
 #- or -
- srun -n 64 ./ior -f load1-posix-filepertask.ior
+srun -n 64 ./ior -f load1-posix-filepertask.ior
 ```
 will execute IOR with 64 processes and use the input configuration
 file called `load1-posix-filepertask.ior`.
@@ -56,20 +56,20 @@ We are interested in and expect the offeror to measure the performance of
 three workloads at multiple levels of concurrency, see [below](#iii-required-runs).
 
 1. fully sequential, large-transaction reads and writes, N to N
-	a. single node CPU
-	b. single node GPU
-	c. 15% proposed number of compute nodes
-	d. sufficient compute nodes to achieve maximum result
+    a. single node CPU
+    b. single node GPU
+    c. 15% proposed number of compute nodes
+    d. sufficient compute nodes to achieve maximum result
 
 2. fully sequential, large-transaction reads and writes, N to 1
-	a. 15% proposed number of compute nodes
-	b. sufficient compute nodes to achieve maximum result
+    a. 15% proposed number of compute nodes
+    b. sufficient compute nodes to achieve maximum result
 
 3. fully random, small-transaction reads and writes, N to N
-        a. single node CPU
-        b. single node GPU
-        c. 15% proposed number of compute nodes
-        d. sufficient compute nodes to achieve maximum result
+    a. single node CPU
+    b. single node GPU
+    c. 15% proposed number of compute nodes
+    d. sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
 script in the `inputs.N10` directory.

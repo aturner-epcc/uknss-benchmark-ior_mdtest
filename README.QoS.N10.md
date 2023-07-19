@@ -17,9 +17,8 @@ the proposed scalable units is allowed.
 The building blocks for these tests are IOR and mdtest runs which are
 described in README.ior.N10.md and README.mdtest.N10.md.
 
-## Required Runs
-
-## QoS Resource Division Scaling Test:
+# II. Running the QoS Resource Division Scaling tests
+--------------------------------------------------------------------------------
 
 ##    1. IOR, sequential, N to N, reads and writes
 

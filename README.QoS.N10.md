@@ -44,45 +44,45 @@ For each of the below tests, there is an annotated Slurm batch script in the
 
 <br>
 
-##    2. IOR, random, small-transaction, N to N, reads and writes
+2. IOR, random, small-transaction, N to N, reads and writes
 
-        a) Run the IOR test 3d), sufficient compute nodes to achieve 
+     - *a.* Run the IOR test 3d), sufficient compute nodes to achieve 
         maximum result on the filesystem or subset of the filesystem. 
         Record the read and write IOPs in the output.
 
-        b) Using the provided QoS mechanism, set the read and write IOPs QoS 
+    - *b.* Using the provided QoS mechanism, set the read and write IOPs QoS 
         for the job to 20% of the values recorded.
 
-        c) Rerun the test with this QoS setting and record the read and 
+    - *c.* Rerun the test with this QoS setting and record the read and 
         write IOPs.
 
-        d) For job counts of 2, 3, 4, and 5. Run independent jobs like 2a, 
+    - *d.* For job counts of 2, 3, 4, and 5. Run independent jobs like 2a, 
           above, simulteneously where the read and write IOPs QoS for each job 
           is set to the same 20% value used for 2c. Record read and write IOPs 
           for each job.
 
-        e) Remove the QoS setting
+    - *e.* Remove the QoS setting
 
 <br>
 
-##    3. mdtest shared directory, creates 
+3. mdtest shared directory, creates 
 
 
-        a) Run mdtest 3e), sufficient MPI processes to achieve maximum result 
+     - *a.* Run mdtest 3e), sufficient MPI processes to achieve maximum result 
         on the filesystem or subset of the filesystem. Record the create, stat, 
         and remove operations per second in the output.
 
-        b) Using the provided QoS mechanism, set the write IOPs QoS to 20% of 
+    - *b.* Using the provided QoS mechanism, set the write IOPs QoS to 20% of 
         the creates per second value recorded.
 
-        c) Rerun the test with this QoS setting and record the results.
+    - *c.* Rerun the test with this QoS setting and record the results.
 
-        d) For job counts of 2, 3, 4, and 5. Run independent jobs like 3a, 
+    - *d.* For job counts of 2, 3, 4, and 5. Run independent jobs like 3a, 
           above, simulteneously where the write IOPs QoS for each job is set to 
           the same 20% value used for 3c. Record read and write IOPs for each 
           job.
 
-        e) Remove the QoS setting
+    - *e.* Remove the QoS setting
 
 # III. Reporting Results
 --------------------------------------------------------------------------------

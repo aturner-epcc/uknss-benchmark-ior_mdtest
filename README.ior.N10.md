@@ -72,7 +72,8 @@ three workloads at multiple levels of concurrency.
     - *d.* sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
-script in the `inputs.N10` directory.
+script in the `inputs.N10` directory. All three configuration file should
+be used and modified as described.
 
 ## a. Mandatory configuration file modifications
 

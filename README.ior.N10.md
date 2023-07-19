@@ -53,23 +53,23 @@ Annotated configuration files for required tests are supplied in the
 ---------------
 
 We are interested in and expect the offeror to measure the performance of
-three workloads at multiple levels of concurrency, see [below](#iii-required-runs).
+three workloads at multiple levels of concurrency.
 
 1. fully sequential, large-transaction reads and writes, N to N
-    a. single node CPU
-    b. single node GPU
-    c. 15% proposed number of compute nodes
-    d. sufficient compute nodes to achieve maximum result
+    - *a.* single node CPU
+    - *b.* single node GPU
+    - *c.* 15% proposed number of compute nodes
+    - *d.* sufficient compute nodes to achieve maximum result
 
 2. fully sequential, large-transaction reads and writes, N to 1
-    a. 15% proposed number of compute nodes
-    b. sufficient compute nodes to achieve maximum result
+    - *a.* 15% proposed number of compute nodes
+    - *b.* sufficient compute nodes to achieve maximum result
 
 3. fully random, small-transaction reads and writes, N to N
-    a. single node CPU
-    b. single node GPU
-    c. 15% proposed number of compute nodes
-    d. sufficient compute nodes to achieve maximum result
+    - *a.* single node CPU
+    - *b.* single node GPU
+    - *c.* 15% proposed number of compute nodes
+    - *d.* sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
 script in the `inputs.N10` directory.
@@ -150,12 +150,13 @@ node), an appropriate `segmentCount` would be
 segmentCount = fileSize / ( 4K * numTasks ) = 1048576
 ```
 
-# III. Reporting Results
+# III. Results
 ------------------
 
- The bandwidth measurements to be reported are the `Max Write` and `Max
-Read` values (in units of `MB/s`) reported to stdout.  In addition,
-the concurrency (number of compute nodes and number of MPI processes
-used) for each run must be stated.
+The bandwidth measurements to be reported are the
+`Max Write` and `Max Read` values (in units of `MB/s`) reported to stdout.
+In addition, the concurrency 
+(number of compute nodes and number of MPI processes used) 
+for each run must be stated.
 
 

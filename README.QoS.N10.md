@@ -20,6 +20,9 @@ described in README.ior.N10.md and README.mdtest.N10.md.
 # II. Running the QoS Resource Division Scaling tests
 --------------------------------------------------------------------------------
 
+For each of the below tests, there are annotated Slurm batch scripts in the
+`QoS_Scripts` directory. 
+
 ##    1. IOR, sequential, N to N, reads and writes
 
         a) Run the IOR test 1d), sufficient compute nodes to achieve maximum 

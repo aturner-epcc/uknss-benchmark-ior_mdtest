@@ -8,30 +8,18 @@ should be reviewed before running these benchmark.<br>
 
 The storage microbenchmarks are intended to measure the performance of the proposed platform storage system (PSS) and quality of service storage system (QSS).
 
-IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO apis.  The specifics of the IOR tests to be performed are in the file called:
+IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
 
-`README.ior.N10`
+mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
 
-with helper scripts in the file called:
-
-`inputs.N10`
-
-mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results.  The specifics of the mdtest tests to be run are in the file called:
-
-`README.mdtest.N10`
-
-Both IOR and mdtest will be employed to measure the performance of 
-the quality of service capability of the QoS Storage System.  Both ior and 
-mdtest will be employed to demonstrate QoS.  The specifics of the QoS tests are in the file called:
-
-`README.QoS.N10`
+Both IOR and mdtest will be employed to measure the performance of  the quality of service capability of the QoS Storage System. The specifics of the QoS tests are in the file named [`README.QoS.N10.md`](README.QoS.N10.md).
 
 # 1. Permitted Modifications
 
 Modifications to the benchmark application code are only permissible to enable
-correct compilation and execution on the target platform.  Any modifications
-must be fully documented (e.g., as a diff or patch file) and reported with the
-benchmark results.
+correct compilation and execution on the target platform.
+Any modifications must be fully documented (e.g., as a diff or patch file)
+and reported with the benchmark results.
 
 
 # 2. Installing IOR and mdtest
@@ -71,3 +59,15 @@ each benchmark was run.  This must include:
     * File system configuration and mount options
 * Compiler name and version, compiler options, and libraries used to build
   benchmarks
+
+
+# 5. Reporting
+
+Results should be reported in the
+[NERSC-10 Benchmark Results worksheet](https://gitlab.com/NERSC/N10-benchmarks/run-rules-and-ssi).
+The required measurements are described in the files
+[README.ior.N10.md](README.ior.N10.md),
+[README.mdtest.N10.md](README.mdtest.N10.md) and
+[README.QoS.N10.md](README.QoS.N10.md).
+
+For the electronic submission, include all the source and makefiles used to build on the target platform and input files and runscripts. Include all standard output files.

@@ -56,7 +56,6 @@ Both tests shall be repeated at each of the following concurencies:
         - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
 
 
-
 # III. Running mdtest
 
 mdtest is executed as any other standard MPI application would be on the
@@ -67,7 +66,7 @@ mdtest with 64 processes.
 mpirun -np 64 mdtest <mdtest_options>
 ```
 
-The `<mdtest_options>` are described in the following section.
+The `<mdtest_options>` are described below.
 
 ## a. Mandatory command line settings
 

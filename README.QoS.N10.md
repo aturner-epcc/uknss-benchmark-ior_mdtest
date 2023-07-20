@@ -17,11 +17,11 @@ the proposed scalable units is allowed.
 The building blocks for these tests are IOR and mdtest runs which are
 described in [`README.ior.N10.md`](README.ior.N10.md) and [`README.mdtest.N10.md`](README.mdtest.N10.md).
 
-# II. Running the QoS Resource Division Scaling tests
---------------------------------------------------------------------------------
-
 For each of the below tests, there is an annotated Slurm batch script in the
-[`QoS_Scripts`](Qos_Scripts) directory. 
+[`QoS_Scripts`](Qos_Scripts) directory.
+
+# II. Required Runs
+--------------------------------------------------------------------------------
 
 1. IOR, sequential, N to N, reads and writes
 
@@ -38,7 +38,6 @@ For each of the below tests, there is an annotated Slurm batch script in the
           bandwidth for each job.
     - *e.* Remove the QoS setting
 
-<br>
 
 2. IOR, random, small-transaction, N to N, reads and writes
 
@@ -55,7 +54,6 @@ For each of the below tests, there is an annotated Slurm batch script in the
           for each job.
     - *e.* Remove the QoS setting
 
-<br>
 
 3. mdtest, shared directory, creates 
 
@@ -71,6 +69,7 @@ For each of the below tests, there is an annotated Slurm batch script in the
           the same 20% value used for 3c. Record read and write IOPs for each 
           job.
     - *e.* Remove the QoS setting
+
 
 # III. Results
 --------------------------------------------------------------------------------

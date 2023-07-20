@@ -40,7 +40,7 @@ There are three QoS tests and the steps for each are the same, only the base tes
     - *a.* Run the base test with sufficient compute nodes to achieve maximum result on the filesystem or subset of the filesystem.  
         - Test 1, record the read and write bandwidth in the output, use 20% of these values for read and write bandwidth QoS.
         - Test 2, record the read and write IOPs in the output, use 20% of these values for read and write IOPs QoS.  
-        - Test 3, record file creates, stats, and removes, use 20% of creates for write IOPs QoS.
+        - Test 3, record file creates, use 20% of file creates for write IOPs QoS.
     - *b.* For job counts of 1, 2, 3, 4, and 5, run independent identical jobs simulteneously using the provided QoS mechanism to set QoS for each job to the 20% values determined above. 
     - *c.* Record the output for each test.
     - *e.* Remove the QoS setting

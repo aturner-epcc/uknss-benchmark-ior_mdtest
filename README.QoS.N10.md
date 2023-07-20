@@ -31,8 +31,7 @@ should, if possible, insert commands to set and unset QoS settings.
 # III. Required Runs
 --------------------------------------------------------------------------------
 
-There are three QoS tests and the steps for each are the same, only the base test
-to be run and the type of QoS employed (bandwidth or IOPs) change.
+There are three QoS tests and the steps for each are the same, only the base test and the type of QoS employed (bandwidth or IOPs) change.
 
 1. IOR, sequential, N to N, reads and writes - base test: `IOR test 1.d` - QoS: `read and write Bandwidth`
 2. IOR, random, small-transaction, N to N, reads and writes - base test: `IOR test 3.d` - QoS: `read and write IOPs`

@@ -1,4 +1,4 @@
-﻿NERSC-10 QSS Only Benchmark
+NERSC-10 QSS Only Benchmark
 ================================================================================
 
 # I. Run Rules
@@ -9,7 +9,7 @@ performance of the quality of service capability of the QoS storage
 systems.
 
 Observed benchmark performance shall be obtained from a storage system
-configured as closely as possible to the proposed platform storage.
+configured as closely as possible to the proposed QoS storage system.
 
 For the purposes of this test, the use of a scalable unit or subset of
 the proposed scalable units is allowed.

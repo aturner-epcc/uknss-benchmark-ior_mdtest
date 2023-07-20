@@ -35,7 +35,7 @@ srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_1 -N 16
 # 1-5 JOBS QoS
 
 for j in 1 2 3 4 5
-		# This is where you set QoS for the new directory
+	# This is where you set QoS for the new directory
         do echo $j "JOBS QoS"
 		for ((i=1; i<=$j; i++))
 		do srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_$i -N 16 &

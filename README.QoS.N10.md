@@ -39,7 +39,7 @@ An example Slurm batch script in the is provided to illustrate the procedure for
 
 | Workload Description | Base Test | QoS Type(s) |  Slurm Script |
 | ----------------- | --------| ---------- | --------- |
-| IOR, sequential, N to N, reads and writes                         |    [`IOR test 1.d`](README.ior.N10.md#iii-required-runs)     |    read and write bandwidth |    [`qos1_example_script.sh`] (QoS_scripts/qos1_example_script.sh) |
+| IOR, sequential, N to N, reads and writes                         |    [`IOR test 1.d`](README.ior.N10.md#iii-required-runs)     |    read and write bandwidth |    [`qos1_example_script.sh`](QoS_scripts/qos1_example_script.sh) |
 | IOR, random, small-transaction, N to N , reads and writes  |    [`IOR test 3.d`](README.ior.N10.md#iii-required-runs)     |    read and write IOPS |    [`qos2_example_script.sh`](QoS_scripts/qos2_example_script.sh) |
 | mdtest, shared directory, creates   |    [`mdtest 1.e`](README.mdtest.N10.md#ii-required-runs) |    write IOPS |     [`qos3_example_script.sh`](QoS_scripts/qos3_example_script.sh) |
 

@@ -39,7 +39,6 @@ should, if possible, insert commands to set and unset QoS settings.
           bandwidth for each job.
     - *e.* Remove the QoS setting
 
-
 2. IOR, random, small-transaction, N to N, reads and writes
 
      - *a.* Run the IOR test 3d), sufficient compute nodes to achieve 
@@ -54,7 +53,6 @@ should, if possible, insert commands to set and unset QoS settings.
           is set to the same 20% value used for 2c. Record read and write IOPs 
           for each job.
     - *e.* Remove the QoS setting
-
 
 3. mdtest, shared directory, creates 
 

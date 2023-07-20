@@ -31,20 +31,24 @@ should, if possible, insert commands to set and unset QoS settings.
 # III. Required Runs
 --------------------------------------------------------------------------------
 
-1. IOR, sequential, N to N, reads and writes
 
-     - *a.* Run the `IOR test 1.d`, sufficient compute nodes to achieve maximum 
-          result on the filesystem or subset of the filesystem. Record the read 
-          and write bandwidth in the output.
-    - *b.* Using the provided QoS mechanism, set the read and write 
-          bandwidth QoS for the job to 20% of the values recorded.
-    - *c.* Rerun the test with this QoS setting and record the read and 
-          write bandwidth in the output.
-    - *d.* For job counts of 2, 3, 4, and 5. Run independent jobs like 1a, 
-          above, simulteneously where the read and write bandwidth QoS for each 
-          job is set to the same 20% value used for 1c. Record read and write 
-          bandwidth for each job.
-    - *e.* Remove the QoS setting
+
+1. IOR, sequential, N to N, reads and writes - `IOR test 1.d`
+2. IOR, random, small-transaction, N to N, reads and writes - `IOR test 3.d`
+3. mdtest, shared directory, creates - `mdtest 1.e`
+
+- *a.* Run the `IOR test 1.d`, sufficient compute nodes to achieve maximum 
+      result on the filesystem or subset of the filesystem. Record the read 
+      and write bandwidth in the output.
+- *b.* Using the provided QoS mechanism, set the read and write 
+      bandwidth QoS for the job to 20% of the values recorded.
+- *c.* Rerun the test with this QoS setting and record the read and 
+      write bandwidth in the output.
+- *d.* For job counts of 2, 3, 4, and 5. Run independent jobs like 1a, 
+      above, simulteneously where the read and write bandwidth QoS for each 
+      job is set to the same 20% value used for 1c. Record read and write 
+      bandwidth for each job.
+- *e.* Remove the QoS setting
 
 2. IOR, random, small-transaction, N to N, reads and writes
 

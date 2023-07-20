@@ -29,26 +29,13 @@ WORK=/scratch/user/results
 
 # ONE JOB
 
-for i in no_QoS QoS
-do echo "ONE JOB" $i
-if [ "$i" == "QoS" ]; then
-	#This is where you set QoS
-	echo "set write IOPs QoS here"
-fi
-
+echo "ONE JOB No QoS"
 srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_1 -N 16
 
-if [ "$i" == "QoS" ]; then
-        #This is where you unset QoS
-        echo "unset write IOPs QoS here"
-fi
-done
+# 1-5 JOBS QoS
 
-# 2-5 JOBS QoS
-#
-# This is where you set write QoS for each job (directory)
-
-for j in 2 3 4 5
+for j in 1 2 3 4 5
+		# This is where you set QoS for the new directory
         do echo $j "JOBS QoS"
 		for ((i=1; i<=$j; i++))
 		do srun -N 4 -n 64 $MDTEST_PATH -F -C -T -r -n 16384 -d $WORK/directory_$i -N 16 &
@@ -56,5 +43,5 @@ for j in 2 3 4 5
 		wait
 	done
 
-#This is where you unset QoS
+#This is where you unset QoS for all directories
 

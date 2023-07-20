@@ -26,7 +26,7 @@ should, if possible, insert commands to set and unset QoS settings.
 
 1. IOR, sequential, N to N, reads and writes
 
-     - *a.* Run the IOR test 1d), sufficient compute nodes to achieve maximum 
+     - *a.* Run the `IOR test 1.d`, sufficient compute nodes to achieve maximum 
           result on the filesystem or subset of the filesystem. Record the read 
           and write bandwidth in the output.
     - *b.* Using the provided QoS mechanism, set the read and write 
@@ -41,7 +41,7 @@ should, if possible, insert commands to set and unset QoS settings.
 
 2. IOR, random, small-transaction, N to N, reads and writes
 
-     - *a.* Run the IOR test 3d), sufficient compute nodes to achieve 
+     - *a.* Run the `IOR test 3.d`, sufficient compute nodes to achieve 
         maximum result on the filesystem or subset of the filesystem. 
         Record the read and write IOPs in the output.
     - *b.* Using the provided QoS mechanism, set the read and write IOPs QoS 
@@ -56,7 +56,7 @@ should, if possible, insert commands to set and unset QoS settings.
 
 3. mdtest, shared directory, creates 
 
-     - *a.* Run mdtest 3e), sufficient MPI processes to achieve maximum result 
+     - *a.* Run `mdtest 1.e`, sufficient MPI processes to achieve maximum result 
         on the filesystem or subset of the filesystem. Record the create, stat, 
         and remove operations per second in the output.
     - *b.* Using the provided QoS mechanism, set the write IOPs QoS to 20% of 

@@ -51,9 +51,9 @@ Both tests shall be repeated at each of the following concurencies:
 - *d.* the optimal number of MPI processes on a single GPU compute node
 - *e.* the sufficient number of compute nodes that achieves the peak results for the proposed system
 - *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
-        - using one MPI process per CPU core across the entire system
-        - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
-        - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
+    - using one MPI process per CPU core across the entire system
+    - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
+    - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
 
 
 # III. Running mdtest

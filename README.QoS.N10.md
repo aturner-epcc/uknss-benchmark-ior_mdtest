@@ -18,7 +18,8 @@ The building blocks for these tests are IOR and mdtest runs which are
 described in [`README.ior.N10.md`](README.ior.N10.md) and [`README.mdtest.N10.md`](README.mdtest.N10.md).
 
 For each of the below tests, there is an annotated Slurm batch script in the
-[`QoS_Scripts`](Qos_Scripts) directory.
+[`QoS_Scripts`](Qos_Scripts) directory.  Each script has marked where offeror
+should, if possible, insert commands to set and unset QoS settings.
 
 # II. Required Runs
 --------------------------------------------------------------------------------
@@ -56,7 +57,6 @@ For each of the below tests, there is an annotated Slurm batch script in the
 
 
 3. mdtest, shared directory, creates 
-
 
      - *a.* Run mdtest 3e), sufficient MPI processes to achieve maximum result 
         on the filesystem or subset of the filesystem. Record the create, stat, 

@@ -42,7 +42,7 @@ srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT
 
 for j in 1 2 3 4 5
 	# This is where you set QoS for the new directory
-        do echo $j "JOBS QoS"
+        do echo $j "JOB QoS"
 		for ((i=1; i<=$j; i++))
         do cd $WORK/directory_$i
 		srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &

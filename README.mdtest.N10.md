@@ -47,22 +47,22 @@ The Offeror shall run both of the following tests
 for each of the listed levels of concurrency. 
 
 1. create, stat, and remove at least 1,048,576 files in a single directory
-    a. a single MPI process on a CPU compute node
-    b. the optimal number of MPI processes on a single CPU compute node
-    c. a single MPI process on a GPU compute node
-    d. the optimal number of MPI processes on a single GPU compute node
-    e. the sufficient number of compute nodes that achieves the peak results for the proposed system
-    f. the maximum possible MPI-level concurrency on the proposed system.  This could mean:
+    - *a.* a single MPI process on a CPU compute node
+    - *b.* the optimal number of MPI processes on a single CPU compute node
+    - *c.* a single MPI process on a GPU compute node
+    - *d.* the optimal number of MPI processes on a single GPU compute node
+    - *e.* the sufficient number of compute nodes that achieves the peak results for the proposed system
+    - *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
         - using one MPI process per CPU core across the entire system
         - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
         - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
 2. create, stat, and remove at least 1,048,576 files in separate directories, assigning one directory per MPI process.
-    a. a single MPI process on a CPU compute node
-    b. the optimal number of MPI processes on a single CPU compute node
-    c. a single MPI process on a GPU compute node
-    d. the optimal number of MPI processes on a single GPU compute node
-    e. the sufficient number of nodes that achieves the peak results for the proposed system
-    f. the maximum possible MPI-level concurrency on the proposed system.  This could mean:
+    - *a.* a single MPI process on a CPU compute node
+    - *b.* the optimal number of MPI processes on a single CPU compute node
+    - *c.* a single MPI process on a GPU compute node
+    - *d.* the optimal number of MPI processes on a single GPU compute node
+    - *e.* the sufficient number of nodes that achieves the peak results for the proposed system
+    - *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
         - using one MPI process per CPU core across the entire system
         - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
         - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes

@@ -1,4 +1,4 @@
-﻿NERSC-10 mdtest Benchmark
+NERSC-10 mdtest Benchmark
 ==================
 
 # I. Run Rules
@@ -10,14 +10,14 @@ and contains features that minimize caching/buffering effects.  As
 such, the Offerer should not utilize optimizations that cache/buffer
 file metadata or metadata operations in compute node memory.
 
-Observed benchmark performance shall be obtained from a storage system
-configured as closely as possible to the proposed platform storage. If
+Observed benchmark performance shall be obtained from storage systems
+configured as closely as possible to the proposed storage systems. If
 the proposed solution includes multiple file access protocols (e.g.,
 pNFS and NFS) or multiple tiers accessible by applications, benchmark
 results for mdtest shall be provided for each protocol and/or tier.
 
 Performance projections are permissible if they are derived from a similar
-system that is considered an earlier generation of the proposed system.
+system that is considered an earlier generation of a proposed system.
 
 Each run of mdtest will report create-, stat- and delete-rates.
 For a given concurrency, all three rates must be reported from the

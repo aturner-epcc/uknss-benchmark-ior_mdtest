@@ -8,10 +8,6 @@ systems.
 # I. Run Rules
 --------------------------------------------------------------------------------
 
-The intent of this benchmark is to demonstrate and measure the
-effectiveness of the quality of service feature of the QoS storage
-systems.
-
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed QoS storage.
 

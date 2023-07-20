@@ -1,4 +1,4 @@
-NERSC-10 QSS Only Benchmark
+NERSC-10 QSS Only Benchmarks
 ================
 
 The intent of these benchmark is to demonstrate and measure the
@@ -17,11 +17,16 @@ the proposed scalable units is allowed.
 The building blocks for these tests are IOR and mdtest runs which are
 described in [`README.ior.N10.md`](README.ior.N10.md) and [`README.mdtest.N10.md`](README.mdtest.N10.md).
 
+
+# II. Running the QSS Only Benchmarks
+--------------------------------------------------------------------------------
+
 For each of the below tests, there is an annotated Slurm batch script in the
 [`QoS_Scripts`](Qos_Scripts) directory.  Each script has marked where offeror
 should, if possible, insert commands to set and unset QoS settings.
 
-# II. Required Runs
+
+# III. Required Runs
 --------------------------------------------------------------------------------
 
 1. IOR, sequential, N to N, reads and writes
@@ -69,7 +74,7 @@ should, if possible, insert commands to set and unset QoS settings.
     - *e.* Remove the QoS setting
 
 
-# III. Results
+# IV. Results
 --------------------------------------------------------------------------------
 
 Offeror will provide documentation and relevant details about how QoS was set 

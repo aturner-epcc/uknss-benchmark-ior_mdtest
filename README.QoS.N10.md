@@ -34,8 +34,8 @@ the following basic steps:
 
 
 The QoS experiment shall be performed for each of the following workloads.
-Each experiment differens only in the base test and the type of QoS employed (bandwidth or IOPs).
-An example Slurm batch script in the is provided to illustrate the procedure for each experiment. 
+Each experiment differs only in the base test and the type of QoS employed (bandwidth or IOPs).
+An example Slurm batch script is provided to illustrate the procedure for each experiment. 
 
 | Workload Description | Base Test | QoS Type(s) |  Slurm Script |
 | ----------------- | --------| ---------- | --------- |

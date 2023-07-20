@@ -9,13 +9,13 @@ effectiveness of the quality of service feature of the QoS storage
 systems.
 
 Observed benchmark performance shall be obtained from a storage system
-configured as closely as possible to the proposed platform storage.
+configured as closely as possible to the proposed QoS storage.
 
 For the purposes of this test, the use of a scalable unit or subset of
 the proposed scalable units is allowed.
 
 The building blocks for these tests are IOR and mdtest runs which are
-described in README.ior.N10.md and README.mdtest.N10.md.
+described in [`README.ior.N10.md`](README.ior.N10.md) and [`README.mdtest.N10.md`](README.mdtest.N10.md).
 
 # II. Running the QoS Resource Division Scaling tests
 --------------------------------------------------------------------------------

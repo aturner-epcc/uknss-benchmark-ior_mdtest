@@ -29,7 +29,35 @@ so if the highest observed file creation rate came from a
 different run than the highest observed deletion rate, report the results from
 the run with the highest file creation rate.
 
-# II. Running mdtest
+
+# II. Required Runs
+
+The Offeror shall run the following two tests.
+1. create, stat, and remove at least 1,048,576 files **in a single directory.** <br>
+`mdtest -F -C -T -r -n <n> -d <dir> -N <N>`
+2. create, stat, and remove at least 1,048,576 files **in separate directories**, assigning one directory per MPI process.<br>
+`mdtest -F -C -T -r -n <n> -d <dir> -N <N> -u`
+
+These tests are configured via command-line arguments, and the
+following section provides guidance on passing the correct options to
+`mdtest` for each test.
+Note that the two tests differ only by the use of single  separate directories (`-u`). 
+
+
+Both tests shall be repeated at each of the following concurencies:
+- *a.* a single MPI process on a CPU compute node
+- *b.* the optimal number of MPI processes on a single CPU compute node
+- *c.* a single MPI process on a GPU compute node
+- *d.* the optimal number of MPI processes on a single GPU compute node
+- *e.* the sufficient number of compute nodes that achieves the peak results for the proposed system
+- *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
+        - using one MPI process per CPU core across the entire system
+        - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
+        - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
+
+
+
+# III. Running mdtest
 
 mdtest is executed as any other standard MPI application would be on the
 proposed system (e.g., with `mpirun` or `srun`).
@@ -40,38 +68,6 @@ mpirun -np 64 mdtest <mdtest_options>
 ```
 
 The `<mdtest_options>` are described in the following section.
-
-# III. Required Runs
-
-The Offeror shall run both of the following tests
-for each of the listed levels of concurrency. 
-
-1. create, stat, and remove at least 1,048,576 files in a single directory
-    - *a.* a single MPI process on a CPU compute node
-    - *b.* the optimal number of MPI processes on a single CPU compute node
-    - *c.* a single MPI process on a GPU compute node
-    - *d.* the optimal number of MPI processes on a single GPU compute node
-    - *e.* the sufficient number of compute nodes that achieves the peak results for the proposed system
-    - *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
-        - using one MPI process per CPU core across the entire system
-        - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
-        - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
-2. create, stat, and remove at least 1,048,576 files in separate directories, assigning one directory per MPI process.
-    - *a.* a single MPI process on a CPU compute node
-    - *b.* the optimal number of MPI processes on a single CPU compute node
-    - *c.* a single MPI process on a GPU compute node
-    - *d.* the optimal number of MPI processes on a single GPU compute node
-    - *e.* the sufficient number of nodes that achieves the peak results for the proposed system
-    - *f.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
-        - using one MPI process per CPU core across the entire system
-        - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
-        - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
-
-
-These tests are configured via command-line arguments, and the
-following section provides guidance on passing the correct options to
-`mdtest` for each test.
-
 
 ## a. Mandatory command line settings
 

@@ -4,6 +4,8 @@ NERSC-10 QSS Only Benchmarks
 The intent of these benchmark is to demonstrate and measure the
 effectiveness of the quality of service feature of the QoS storage
 systems.
+The QoS tests are required only for the QSS.
+
 
 # I. Run Rules
 --------------------------------------------------------------------------------

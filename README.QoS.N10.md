@@ -38,13 +38,11 @@ to be run and the type of QoS employed (bandwidth or IOPs) change.
 2. IOR, random, small-transaction, N to N, reads and writes - base test: `IOR test 3.d` - QoS: `read and write IOPs`
 3. mdtest, shared directory, creates - base test: `mdtest 1.e` - QoS: `write IOPs`
 
-- *a.* Run the base test with sufficient compute nodes to achieve maximum 
-      result on the filesystem or subset of the filesystem.  
-      For test 1, record the read and write bandwidth in the output, use 20% of these values for read and write bandwidth QoS.
-      For test 2, record the read and write IOPs in the output, use 20% of these values for read and write IOPs QoS.  
-      For test 3, record file creates, stats, and removes, use 20% of creates for write IOPs QoS.
-- *b.* For job counts of 1, 2, 3, 4, and 5. Run independent identical jobs simulteneously, 
-      using the provided QoS mechanism to set QoS for each job to the 20% values determined above. 
+- *a.* Run the base test with sufficient compute nodes to achieve maximum result on the filesystem or subset of the filesystem.  
+            - For test 1, record the read and write bandwidth in the output, use 20% of these values for read and write bandwidth QoS.
+            - For test 2, record the read and write IOPs in the output, use 20% of these values for read and write IOPs QoS.  
+            - For test 3, record file creates, stats, and removes, use 20% of creates for write IOPs QoS.
+- *b.* For job counts of 1, 2, 3, 4, and 5, run independent identical jobs simulteneously using the provided QoS mechanism to set QoS for each job to the 20% values determined above. 
 - *c.* Record the output for each test.
 - *e.* Remove the QoS setting
 

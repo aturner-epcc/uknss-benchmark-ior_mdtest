@@ -34,28 +34,15 @@ WORK=/scratch/user/results
 
 #ONE JOB
 
-for i in no_QoS QoS
-do echo "ONE JOB" $i
-if [ "$i" == "QoS" ]; then 
-	#This is where you set 20% QoS
-	echo "set read and write BW QoS here"
-fi
-
+echo "ONE JOB No QoS"
 cd $WORK/directory_1
 srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT
 
-if [ "$i" == "QoS" ]; then
-        #This is where you unset QoS
-        echo "unset read and write BW QoS here"
-fi
-done
+# 1-5 JOBS QoS
 
-# 2-5 JOBS QoS
-#
-# This is where you set read/write QoS for each job (directory)
-
-for j in 2 3 4 5
-        do echo $j "JOBS QoS"
+for j in 1 2 3 4 5
+	# This is where you set QoS for the new directory
+        do echo $j "JOB QoS"
 		for ((i=1; i<=$j; i++))
         do cd $WORK/directory_$i
 		srun -N 5 -n 50 $IOR_PATH -f $IOR_SCRIPT &
@@ -63,4 +50,4 @@ for j in 2 3 4 5
 	wait
 done
 
-#This is where you unset QoS
+#This is where you unset QoS for all directories

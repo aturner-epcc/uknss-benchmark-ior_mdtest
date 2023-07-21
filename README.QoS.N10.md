@@ -1,12 +1,12 @@
-NERSC-10 QSS Only Benchmark
-================================================================================
+NERSC-10 QSS Only Benchmarks
+================
+
+The intent of these benchmark is to demonstrate and measure the
+effectiveness of the quality of service feature of the QoS storage
+systems.
+The QoS tests are required only for the QSS.
 
 # I. Run Rules
---------------------------------------------------------------------------------
-
-The intent of this benchmark is to demonstrate and measure the
-performance of the quality of service capability of the QoS storage
-systems.
 
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed QoS storage system.
@@ -14,76 +14,42 @@ configured as closely as possible to the proposed QoS storage system.
 For the purposes of this test, the use of a scalable unit or subset of
 the proposed scalable units is allowed.
 
-The building blocks for these tests are IOR and mdtest runs which are
-described in README.ior.N10.md and README.mdtest.N10.md.
+The building blocks for these tests are IOR and mdtest runs which are described in
+[`README.ior.N10.md`](README.ior.N10.md) and
+[`README.mdtest.N10.md`](README.mdtest.N10.md).
 
-## Required Runs
+# II. Required Runs
 
-## QoS Resource Division Scaling Test:
+The QoS evaluation can be applied to various test workloads, and has
+the following basic steps:
 
-###    1) IOR, sequential, N to N, reads and writes
-
-        a. Run the IOR test 1d), sufficient compute nodes to achieve maximum 
-          result on the filesystem or subset of the filesystem. Record the read 
-          and write bandwidth in the output.
-
-        b. Using the provided QoS mechanism, set the read and write 
-          bandwidth QoS for the job to 20% of the values recorded.
-
-        c. Rerun the test with this QoS setting and record the read and 
-          write bandwidth in the output.
-
-        d. For job counts of 2, 3, 4, and 5. Run independent jobs like 1a, 
-          above, simulteneously where the read and write bandwidth QoS for each 
-          job is set to the same 20% value used for 1c. Record read and write 
-          bandwidth for each job.
-
-        e. Remove the QoS setting
-
-<br>
-
-###    2) IOR, random, small-transaction, N to N, reads and writes
-
-        a. Run the IOR test 3d), sufficient compute nodes to achieve 
-        maximum result on the filesystem or subset of the filesystem. 
-        Record the read and write IOPs in the output.
-
-        b. Using the provided QoS mechanism, set the read and write IOPs QoS 
-        for the job to 20% of the values recorded.
-
-        c. Rerun the test with this QoS setting and record the read and 
-        write IOPs.
-
-        d. For job counts of 2, 3, 4, and 5. Run independent jobs like 2a, 
-          above, simulteneously where the read and write IOPs QoS for each job 
-          is set to the same 20% value used for 2c. Record read and write IOPs 
-          for each job.
-
-        e. Remove the QoS setting
-
-<br>
-
-###    3) mdtest shared directory, creates 
+1. Run the base test with a sufficient compute nodes to achieve maximum result on the filesystem or subset of the filesystem.  
+2. For job counts of _n_ = 1, 2, 3, 4, and 5,
+    - Set the QOS for each job to 20% of the maximum result measured in step 1. 
+    - Run _n_ independent identical  jobs, all performing the base test simulteneously
+    - Record the output for each job.
+    - Remove the QoS setting
+    - ( A total of 1 + 2 + 3  + 4 + 5 = 15 jobs is needed to complete step 2.)
 
 
-        a. Run mdtest 3e), sufficient MPI processes to achieve maximum result 
-        on the filesystem or subset of the filesystem. Record the create, stat, 
-        and remove operations per second in the output.
+The QoS experiment shall be performed for each of the following workloads.
+Each experiment differs only in the base test and the type of QoS employed (bandwidth or IOPs).
+An example Slurm batch script is provided to illustrate the procedure for each experiment. 
 
-        b. Using the provided QoS mechanism, set the write IOPs QoS to 20% of 
-        the creates per second value recorded.
+| Workload Description | Base Test | QoS Type(s) |  Slurm Script |
+| ----------------- | --------| ---------- | --------- |
+| IOR, sequential, N to N, reads and writes                         |    [`IOR test 1.d`](README.ior.N10.md#iii-required-runs)     |    read and write bandwidth |    [`qos1_example_script.sh`](QoS_scripts/qos1_example_script.sh) |
+| IOR, random, small-transaction, N to N , reads and writes  |    [`IOR test 3.d`](README.ior.N10.md#iii-required-runs)     |    read and write IOPS |    [`qos2_example_script.sh`](QoS_scripts/qos2_example_script.sh) |
+| mdtest, shared directory, creates   |    [`mdtest 1.e`](README.mdtest.N10.md#ii-required-runs) |    write IOPS |     [`qos3_example_script.sh`](QoS_scripts/qos3_example_script.sh) |
 
-        c. Rerun the test with this QoS setting and record the results.
+# II. Running the QSS Only Benchmarks
 
-        d. For job counts of 2, 3, 4, and 5. Run independent jobs like 3a, 
-          above, simulteneously where the write IOPs QoS for each job is set to 
-          the same 20% value used for 3c. Record read and write IOPs for each 
-          job.
+For each of the test workloads, there is an annotated Slurm batch script in the
+[`QoS_Scripts`](Qos_Scripts) directory.  Each script has marked where offeror
+should, if possible, insert commands to set and unset QoS settings.
 
-        e. Remove the QoS setting
 
-# III. Reporting Results
---------------------------------------------------------------------------------
+# IV. Results
 
 Offeror will provide documentation and relevant details about how QoS was set 
 to achieve results.  Additional details about offeror's QoS mechanism(s) are 

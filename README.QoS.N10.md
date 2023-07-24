@@ -26,9 +26,9 @@ the following basic steps:
 1. Run the base test with a sufficient compute nodes to achieve maximum result on the filesystem or subset of the filesystem.  
 2. For job counts of _n_ = 1, 2, 3, 4, and 5,
     - Set the QOS for each job to 20% of the maximum result measured in step 1. 
-    - Run _n_ independent identical  jobs, all performing the base test simulteneously
+    - Run _n_ independent  jobs simultaneously, each performing the base test.
     - Record the output for each job.
-    - Remove the QoS setting
+    - Remove the QoS setting.
     - ( A total of 1 + 2 + 3  + 4 + 5 = 15 jobs is needed to complete step 2.)
 
 
@@ -42,11 +42,10 @@ An example Slurm batch script is provided to illustrate the procedure for each e
 | IOR, random, small-transaction, N to N , reads and writes  |    [`IOR test 3.d`](README.ior.N10.md#iii-required-runs)     |    read and write IOPS |    [`qos2_example_script.sh`](QoS_scripts/qos2_example_script.sh) |
 | mdtest, shared directory, creates   |    [`mdtest 1.e`](README.mdtest.N10.md#ii-required-runs) |    write IOPS |     [`qos3_example_script.sh`](QoS_scripts/qos3_example_script.sh) |
 
-# II. Running the QSS Only Benchmarks
+# III. Running the QSS Only Benchmarks
 
 For each of the test workloads, there is an annotated Slurm batch script in the
-[`QoS_Scripts`](Qos_Scripts) directory.  Each script has marked where offeror
-should, if possible, insert commands to set and unset QoS settings.
+[`QoS_Scripts`](Qos_Scripts) directory.  There are comments in each script indicating where QoS settings would need to be set and unset. These scripts are provided to illustrate the steps required to complete the benchmarks.  The offeror, however, is free to implement their own solution.
 
 
 # IV. Results

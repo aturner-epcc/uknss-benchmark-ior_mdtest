@@ -6,7 +6,7 @@ should be reviewed before running these benchmark.<br>
 
 # 0. Storage Microbenchmarks Overview
 
-The storage microbenchmarks are intended to measure the performance of the proposed platform storage system (PSS) and quality of service storage system (QSS).
+The storage microbenchmarks are intended to measure the performance of the two proposed storage systems: the platform storage system (PSS) and the quality of service storage system (QSS).
 
 Three sets of measurments are required:
 * IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).

@@ -6,15 +6,15 @@ should be reviewed before running these benchmark.<br>
 
 # 0. Storage Microbenchmarks Overview
 
-The storage microbenchmarks are intended to measure the performance of the two proposed storage systems: the platform storage system (PSS) and the quality of service storage system (QSS).
+The storage microbenchmarks are intended to measure the performance of the two proposed storage systems: the platform storage system (PSS), for standard HPC workloads, and the quality of service storage system (QSS), which will provide deterministic outcomes.
 
-Three sets of measurments are required:
-* IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
-* mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
-* Both IOR and mdtest will be employed to measure the performance of
-the quality of service capability of the QSS.  The specifics of the QoS tests are in the file named
+To complete the entire benchmark, three sets of measurments are required:
+* For both storage systems, IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
+* For both storage systems, mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
+* For only the QSS, IOR and mdtest will be employed to measure the performance of
+the system's quality of service capability.  The specifics of the QoS tests are in the file named
 [`README.QoS.N10.md`](README.QoS.N10.md).
-The QoS tests are required only for the QSS.
+
 
 # 1. Permitted Modifications
 

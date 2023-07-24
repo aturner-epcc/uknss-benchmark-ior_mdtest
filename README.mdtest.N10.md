@@ -24,10 +24,6 @@ For a given concurrency, all three rates must be reported from the
 same mdtest run. 
 Reporting the maximum creation rates from one run
 and the maximum deletion rates from a different run is NOT valid.
-File creation rate has slightly higher importance for this test,
-so if the highest observed file creation rate came from a
-different run than the highest observed deletion rate, report the results from
-the run with the highest file creation rate.
 
 
 # II. Required Runs

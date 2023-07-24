@@ -10,13 +10,17 @@ The QoS tests are required only for the QSS.
 
 Observed benchmark performance shall be obtained from a storage system
 configured as closely as possible to the proposed QoS storage system.
+If a proposed solution includes multiple file access protocols (e.g.,
+pNFS and NFS) accessible by applications, QoS benchmark results shall 
+be provided for one protocol of the offeror's choice.
 
 For the purposes of this test, the use of a scalable unit or subset of
 the proposed scalable units is allowed.
 
 The building blocks for these tests are IOR and mdtest runs which are described in
 [`README.ior.N10.md`](README.ior.N10.md) and
-[`README.mdtest.N10.md`](README.mdtest.N10.md).
+[`README.mdtest.N10.md`](README.mdtest.N10.md). 
+
 
 # II. Required Runs
 

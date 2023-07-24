@@ -27,9 +27,6 @@ Each run of IOR will execute both read and write tests.
 Read and write resuts must be reported from the same run;
 reporting the maximum read bandwidth from one run
 and the maximum write bandwidth from a different run is NOT valid.
-Write bandwidth has slightly higher importance for this test, so 
-it is beneficial to report the results from the run with the highest 
-write rate.
 
 
 # II. Running IOR

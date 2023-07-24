@@ -87,7 +87,7 @@ In all three scripts, the offeror MUST modify the following
   This governs the size of the file(s) written/read, and the amount of
   data written/read by each node must exceed 1.5 times the memory
   available for the file system's page cache (typically the entire
-  node's RAM). See [below](#custom-id) for details.
+  node's RAM). See [below](#d-segmentcount-specification) for details.
 
 * `memoryPerNode` - size (in %) of each node's RAM to be filled before
   running the benchmark test.  This value must be no less than 80% of
@@ -122,7 +122,7 @@ For the random load (3), the offeror MAY modify only the following parameter for
 
 * `testFile` - path to data files to be read or written for this benchmark
 
-## d. segmentCount specification {#custom-id}
+## d. segmentCount specification
 
 As mentioned above, `segmentCount` must be set so that the total
 amount of data written is greater than 1.5 times the amount of RAM on

@@ -60,7 +60,6 @@ executable at `src/mdtest`.
 
 ## Running the benchmark
 
-
 ### Required Tests
 
 To complete the entire benchmark, two sets of measurements are required:

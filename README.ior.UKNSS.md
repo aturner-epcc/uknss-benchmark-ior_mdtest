@@ -1,36 +1,40 @@
-NERSC-10 IOR Benchmark 
-================
+# UKNSS IOR Benchmark 
+
+
 The intent of these benchmarks is to measure the bandwidth to and from
-both the Platform and QoS storage systems.  We are
-interested in and expect the offeror to measure the performance of
-three workloads at multiple levels of concurrency, see [below](#iii-required-runs).
+the parallel file system(s) (PFS) provided by the bidder.  We are
+interested in and expect the bidder to measure the performance of
+three workloads at multiple levels of concurrency, see
+[below](#iii-required-runs).
 
 
-# I. Run Rules
------------
+## I. Run Rules
+
 Observed benchmark performance shall be obtained from storage systems
 configured as closely as possible to the proposed storage systems. If
 a proposed solution includes multiple file access protocols (e.g.,
 pNFS and NFS) or multiple tiers accessible by applications, benchmark
-results for IOR shall be provided for each protocol and/or tier.
+results for IOR shall be provided for each protocol and/or tier. If 
+the proposed solution includes multiple, separate file systems then 
+benchmark results for IOR shall be provided for all proposed file
+systems.
 
 Performance projections are permissible if they are derived from a
 similar system that is considered an earlier generation of the
 proposed system.
 
-The offerer is expected to avoid any optimizations that cache or
-buffer transferred data in system memory.  However, page caches on the
+The bidder is expected to avoid any optimisations that cache or
+buffer transferred data in system memory. However, page caches on the
 storage subsystem's servers may still be used, but they must be
-configured as they would be for the delivered NERSC-10 systems.
+configured as they would be for the delivered UKNSS systems.
 
 Each run of IOR will execute both read and write tests.
-Read and write resuts must be reported from the same run;
+Read and write results must be reported from the same run;
 reporting the maximum read bandwidth from one run
 and the maximum write bandwidth from a different run is NOT valid.
 
+## II. Running IOR
 
-# II. Running IOR
--------------
 IOR is executed as any other standard MPI application would be on the
 proposed system.  For example,
 ```	 
@@ -42,13 +46,12 @@ will execute IOR with 64 processes and use the input configuration
 file called `load1-posix-filepertask.ior`.
 
 Annotated configuration files for required tests are supplied in the
-[`inputs.N10/`](inputs.N10) directory.
+[`inputs.UKNSS`](inputs.UKNSS) directory.
 
 
-# III. Required Runs
----------------
+## III. Required Runs
 
-We are interested in and expect the offeror to measure the performance of
+We are interested in and expect the bidder to measure the performance of
 three workloads at multiple levels of concurrency.
 
 1. fully sequential, large-transaction reads and writes, N to N
@@ -68,15 +71,15 @@ three workloads at multiple levels of concurrency.
     - *d.* sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
-script in the `inputs.N10` directory. All three configuration files should
+script in the `inputs.UKNSS` directory. All three configuration files should
 be used and modified as described below.
 
-## a. Mandatory configuration file modifications
+### a. Mandatory configuration file modifications
 
-In all three scripts, the offeror MUST modify the following
+In all three scripts, the bidder **MUST** modify the following
     parameters for each benchmark test:
 
-* `numTasks` - the number of MPI processes to use.  The Offeror may
+* `numTasks` - the number of MPI processes to use.  The bidder may
   choose to run multiple MPI processes per compute node to achieve the
   highest bandwidth results.
 
@@ -91,13 +94,13 @@ In all three scripts, the offeror MUST modify the following
   the total RAM available on each compute node and is intended to
   represent the memory footprint of a real application.
 
-## b. Optional configuration file modifications for sequential workloads
+### b. Optional configuration file modifications for sequential workloads
 
-For the sequential loads (1 and 2), the Offeror MAY modify the
+For the sequential loads (1 and 2), the bidder **MAY** modify the
 following parameters for each test:
 
 * `transferSize` - the size (in bytes) of a single data buffer to be
-   transferred in a single I/O call.  The Offeror should find the
+   transferred in a single I/O call.  The bidder should find the
    transferSize that produces the highest bandwidth results and report
    this optimal transferSize.  `blockSize` must always be equal to
    `transferSize`.
@@ -113,13 +116,13 @@ User Guide (found in `doc/USER_GUIDE`).
 
 * `collective` - MPI-IO collective vs. independent operation mode
 
-## c. Optional configuration file modifications for random workloads
+### c. Optional configuration file modifications for random workloads
 
-For the random load (3), the offeror MAY modify only the following parameter for each test:
+For the random load (3), the bidder **MAY** modify only the following parameter for each test:
 
 * `testFile` - path to data files to be read or written for this benchmark
 
-## d. segmentCount specification
+### d. segmentCount specification
 
 As mentioned above, `segmentCount` must be set so that the total
 amount of data written is greater than 1.5 times the amount of RAM on
@@ -147,8 +150,8 @@ node), an appropriate `segmentCount` would be
 segmentCount = fileSize / ( 4K * numTasks ) = 1048576
 ```
 
-# III. Results
-------------------
+## III. Results
+
 
 The bandwidth measurements to be reported are the
 `Max Write` and `Max Read` values (in units of `MB/s`) reported to stdout.

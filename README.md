@@ -16,7 +16,9 @@ Stable
 
 ### Software
 
-MPI and MPI-IO are required to build and run the codes. The source code used for this benchmark is derived from IOR 3.3.0 and it is included here.  More information about IOR is available at https://github.com/hpc/ior.
+MPI and MPI-IO are required to build and run the codes. The source code
+used for this benchmark is derived from IOR 3.3.0 and it is included here. 
+More information about IOR is available at https://github.com/hpc/ior.
 
 ### Architectures
 
@@ -31,8 +33,8 @@ MPI and MPI-IO are required to build and run the codes. The source code used for
 
 ## Building the benchmark
 
-At the moment, only manual build instructions are available. We plan to add Spack
-build instructions in the future.
+**Important:** All results submitted should be based on the versions of IOR and
+mdtest included in this repository.
 
 ### Permitted modifications
 
@@ -58,24 +60,25 @@ executable at `src/mdtest`.
 
 ## Running the benchmark
 
-At the moment, only manual run instructions are available.
 
 ### Required Tests
 
-To complete the entire benchmark, three sets of measurments are required:
+To complete the entire benchmark, two sets of measurements are required:
 
-- IOR will be used to measure parallel I/O performance using both the POSIX and MPI-IO APIs. The specifics of the IOR tests to be performed are in the file named [`README.ior.N10.md`](README.ior.N10.md).
-- For both storage systems, mdtest will be used to measure the performance of various metadata operations using MPI to execute the operations and collect the results. The specifics of the mdtest tests to be run are in the file named [`README.mdtest.N10.md`](README.mdtest.N10.md).
-- For only the QSS, IOR and mdtest will be employed to measure the performance of
-the system's quality of service capability.  The specifics of the QoS tests are in the file named
-[`README.QoS.N10.md`](README.QoS.N10.md).
+- IOR will be used to measure parallel I/O performance using both the POSIX
+  and MPI-IO APIs. The specifics of the IOR tests to be performed are in the
+  file named [`README.ior.UKNSS.md`](README.ior.UKNSS.md).
+- mdtest will be used to measure the performance of various metadata operations
+  using MPI to execute the operations and collect the results. The specifics of
+  the mdtest tests to be run are in the file named
+  [`README.mdtest.UKNSS.md`](README.mdtest.UKNSS.md).
 
 ## Reporting results
 
 ### Benchmark platform description
 
-The Offeror must provide a comprehensive description of the environment in which
-each benchmark was run.  This must include:
+The bidder must provide a comprehensive description of the environment in which
+each benchmark was run. This must include:
 
 - Client and server system configurations, including node and processor counts,
   processor models, memory size and speed, and OS (names and versions)
@@ -95,9 +98,8 @@ each benchmark was run.  This must include:
 
 ### Performance data
 
-The required measurements are described in the files
-[README.ior.N10.md](README.ior.N10.md),
-[README.mdtest.N10.md](README.mdtest.N10.md) and
-[README.QoS.N10.md](README.QoS.N10.md).
+The required measurements to be reported are described in the files
+[README.ior.UKNSS.md](README.ior.UKNSS.md) and
+[README.mdtest.UKNSS.md](README.mdtest.UKNSS.md).
 
 

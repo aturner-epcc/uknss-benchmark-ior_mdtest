@@ -55,20 +55,18 @@ We are interested in and expect the bidder to measure the performance of
 three workloads at multiple levels of concurrency.
 
 1. fully sequential, large-transaction reads and writes, N to N
-    - *a.* single node CPU
-    - *b.* single node GPU
-    - *c.* 15% proposed number of compute nodes
-    - *d.* sufficient compute nodes to achieve maximum result
+    - *a.* single node
+    - *b.* 15% proposed number of compute nodes
+    - *c.* sufficient compute nodes to achieve maximum result
 
 2. fully sequential, large-transaction reads and writes, N to 1
     - *a.* 15% proposed number of compute nodes
     - *b.* sufficient compute nodes to achieve maximum result
 
 3. fully random, small-transaction reads and writes, N to N
-    - *a.* single node CPU
-    - *b.* single node GPU
-    - *c.* 15% proposed number of compute nodes
-    - *d.* sufficient compute nodes to achieve maximum result
+    - *a.* single node
+    - *b.* 15% proposed number of compute nodes
+    - *c.* sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
 script in the `inputs.UKNSS` directory. All three configuration files should

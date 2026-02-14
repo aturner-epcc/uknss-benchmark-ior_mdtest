@@ -128,12 +128,11 @@ the compute nodes.  The total fileSize is given by
 ```
 fileSize = segmentCount * blockSize * numTasks
 ```
-So for a 10-node test with an aggregate 640 GB of RAM, `fileSize` must
-be at least 960 GB.  Assuming `blockSize=1MB` and `numTasks=240`
-(24 MPI processes per node) is optimal, an appropriate `segmentCount`
-would be
+So for a test on nodes with 480 GiB of RAM, `fileSize` must
+be at least 720 GiB (737,280 MiB).  Assuming `blockSize=1MB` and `numTasks=64`
+is optimal, an appropriate `segmentCount` would be
 ```
-segmentCount = fileSize / ( blockSize * numTasks ) = 4096
+segmentCount = fileSize / ( blockSize * numTasks ) = 11520
 ```
 
 Repeating the above example for the random load (3) and its fixed
@@ -141,11 +140,11 @@ block size of 4K:
 ```
 fileSize = segmentCount * 4K * numTasks
 ```
-So for a 10-node test with an aggregate 640 GB of RAM, `fileSize` must
-be at least 960 GB.  Assuming `numTasks=240` (24 MPI processes per
-node), an appropriate `segmentCount` would be
+So for a test on nodes with 480 GiB of RAM, `fileSize` must
+be at least 720 GB (737,280 MiB).  Assuming `numTasks=64`,
+an appropriate `segmentCount` would be
 ```
-segmentCount = fileSize / ( 4K * numTasks ) = 1048576
+segmentCount = fileSize / ( 4K * numTasks ) = 2949120
 ```
 
 ## III. Results

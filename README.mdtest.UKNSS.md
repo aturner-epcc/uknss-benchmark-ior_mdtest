@@ -7,7 +7,7 @@ This benchmark is intended to measure the metadata capability of
 he parallel file system(s) (PFS) provided by the bidder.  It measures
 the rate at which a file system can create, state, and delete files,
 and contains features that minimise caching/buffering effects.  As
-such, the bidder should not utilise optimizations that cache/buffer
+such, the bidder should not utilise optimisations that cache/buffer
 file metadata or metadata operations in compute node memory. 
 
 Observed benchmark performance shall be obtained from storage systems
@@ -25,13 +25,14 @@ system that is considered an earlier generation of a proposed system.
 Each run of mdtest will report create-, stat- and delete-rates.
 For a given concurrency, all three rates must be reported from the
 same mdtest run. 
+
 Reporting the maximum creation rates from one run
 and the maximum deletion rates from a different run is NOT valid.
 
-
 ## II. Required Runs
 
-The vendor shall run the following two tests.
+The bidder shall run the following two tests.
+
 1. create, stat, and remove at least 1,048,576 files **in a single directory.** <br/>
 `mdtest -F -C -T -r -n <n> -d <dir> -N <N>`
 2. create, stat, and remove at least 1,048,576 files **in separate directories**, assigning one directory per MPI process.<br/>
@@ -43,7 +44,7 @@ following section provides guidance on passing the correct options to
 Note that the two tests differ only by the use of single  separate directories (`-u`). 
 
 
-Both tests shall be repeated at each of the following concurencies:
+Both tests shall be repeated at each of the following scenarios:
 - *a.* a single MPI process on a compute node
 - *b.* the optimal number of MPI processes on a single compute node
 - *c.* the sufficient number of compute nodes that achieves the peak results for the proposed system

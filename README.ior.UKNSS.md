@@ -26,7 +26,7 @@ proposed system.
 The bidder is expected to avoid any optimisations that cache or
 buffer transferred data in system memory. However, page caches on the
 storage subsystem's servers may still be used, but they must be
-configured as they would be for the delivered UKNSS systems.
+configured as they would be for the delivered UK NSS system.
 
 Each run of IOR will execute both read and write tests.
 Read and write results must be reported from the same run;
@@ -54,16 +54,16 @@ Annotated configuration files for required tests are supplied in the
 We are interested in and expect the bidder to measure the performance of
 three workloads at multiple levels of concurrency.
 
-1. fully sequential, large-transaction reads and writes, N to N
+1. sequential access, large-transaction reads and writes, N to N (1 file per MPI process)
     - *a.* single node
     - *b.* 15% proposed number of compute nodes
     - *c.* sufficient compute nodes to achieve maximum result
 
-2. fully sequential, large-transaction reads and writes, N to 1
+2. sequential access, large-transaction reads and writes, N to 1 (all MPI processes writing to a single file using MPIIO)
     - *a.* 15% proposed number of compute nodes
     - *b.* sufficient compute nodes to achieve maximum result
 
-3. fully random, small-transaction reads and writes, N to N
+3. random access, small-transaction reads and writes, N to N (1 file per MPI process)
     - *a.* single node
     - *b.* 15% proposed number of compute nodes
     - *c.* sufficient compute nodes to achieve maximum result
@@ -94,7 +94,7 @@ In all three scripts, the bidder **MUST** modify the following
 
 ### b. Optional configuration file modifications for sequential workloads
 
-For the sequential loads (1 and 2), the bidder **MAY** modify the
+For the sequential access tests (1 and 2), the bidder **MAY** modify the
 following parameters for each test:
 
 * `transferSize` - the size (in bytes) of a single data buffer to be

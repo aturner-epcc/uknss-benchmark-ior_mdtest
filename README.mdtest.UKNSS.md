@@ -48,11 +48,6 @@ Both tests shall be repeated at each of the following scenarios:
 - *a.* a single MPI process on a compute node
 - *b.* the optimal number of MPI processes on a single compute node
 - *c.* the sufficient number of compute nodes that achieves the peak results for the proposed system
-- *d.* the maximum possible MPI-level concurrency on the proposed system.  This could mean:
-    - using one MPI process per CPU core across the entire system
-    - using the maximum number of MPI processes possible if one MPI process per core will not be possible on the proposed architecture
-    - using more than 1,048,576 files if the system is capable of launching more than 1,048,576 MPI processes
-
 
 ## III. Running mdtest
 

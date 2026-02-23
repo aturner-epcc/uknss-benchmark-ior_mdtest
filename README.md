@@ -1,4 +1,4 @@
-#  Storage micro-benchmark
+#  UKNNSS Storage Benchmark
 
 **Note:** This benchmark/repository is closely based on the one used for the [NERSC-10 benchmarks](https://www.nersc.gov/systems/nersc-10/benchmarks/)
 
@@ -66,11 +66,11 @@ To complete the entire benchmark, two sets of measurements are required:
 
 - IOR will be used to measure parallel I/O performance using both the POSIX
   and MPI-IO APIs. The specifics of the IOR tests to be performed are in the
-  file named [`README.ior.UKNSS.md`](README.ior.UKNSS.md).
+  file named [`README.ior.UKNNSS.md`](README.ior.UKNNSS.md).
 - mdtest will be used to measure the performance of various metadata operations
   using MPI to execute the operations and collect the results. The specifics of
   the mdtest tests to be run are in the file named
-  [`README.mdtest.UKNSS.md`](README.mdtest.UKNSS.md).
+  [`README.mdtest.UKNNSS.md`](README.mdtest.UKNNSS.md).
 
 ## Reporting results
 
@@ -98,7 +98,7 @@ each benchmark was run. This must include:
 ### Performance data
 
 The required measurements to be reported are described in the files
-[README.ior.UKNSS.md](README.ior.UKNSS.md) and
-[README.mdtest.UKNSS.md](README.mdtest.UKNSS.md).
+[README.ior.UKNNSS.md](README.ior.UKNNSS.md) and
+[README.mdtest.UKNNSS.md](README.mdtest.UKNNSS.md).
 
 

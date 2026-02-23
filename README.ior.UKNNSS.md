@@ -1,4 +1,4 @@
-# UKNSS IOR Benchmark 
+# UKNNSS IOR Benchmark 
 
 
 The intent of these benchmarks is to measure the bandwidth to and from
@@ -26,7 +26,7 @@ proposed system.
 The bidder is expected to avoid any optimisations that cache or
 buffer transferred data in system memory. However, page caches on the
 storage subsystem's servers may still be used, but they must be
-configured as they would be for the delivered UK NSS system.
+configured as they would be for the delivered UK NNSS system.
 
 Each run of IOR will execute both read and write tests.
 Read and write results must be reported from the same run;
@@ -46,7 +46,7 @@ will execute IOR with 64 processes and use the input configuration
 file called `load1-posix-filepertask.ior`.
 
 Annotated configuration files for required tests are supplied in the
-[`inputs.UKNSS`](inputs.UKNSS) directory.
+[`inputs.UKNNSS`](inputs.UKNNSS) directory.
 
 
 ## III. Required Runs
@@ -69,7 +69,7 @@ three workloads at multiple levels of concurrency.
     - *c.* sufficient compute nodes to achieve maximum result
 
 For each of the above three loads, we have provided an annotated IOR
-script in the `inputs.UKNSS` directory. All three configuration files should
+script in the `inputs.UKNNSS` directory. All three configuration files should
 be used and modified as described below.
 
 ### a. Mandatory configuration file modifications
